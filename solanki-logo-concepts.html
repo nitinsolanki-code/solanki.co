@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solanki Logo Concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #F3EEE7;
+            --bg-card: #E8DFD3;
+            --accent: #D4C4B0;
+            --text: #313131;
+            --text-mid: rgb(120, 110, 100);
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================
+           PAGE HEADER
+        ============================================ */
+        .page-header {
+            text-align: center;
+            padding: 80px 2rem 60px;
+        }
+
+        .page-header .eyebrow {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+            margin: 1.5rem auto;
+        }
+
+        /* ============================================
+           CONCEPT SECTIONS
+        ============================================ */
+        .concept {
+            padding: 60px 2rem 80px;
+        }
+
+        .concept:nth-child(even) {
+            background: var(--white);
+        }
+
+        .concept-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .concept-label {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .concept-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .concept-desc {
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            line-height: 1.75;
+            max-width: 560px;
+            margin-bottom: 3rem;
+        }
+
+        .concept-recommended {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            border: 1px solid var(--accent);
+            padding: 0.3rem 0.8rem;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+        }
+
+        /* ============================================
+           LOGO DISPLAY AREAS
+        ============================================ */
+        .logo-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            padding: 3rem 2rem;
+            border: 1px solid rgba(212, 196, 176, 0.4);
+            position: relative;
+        }
+
+        .logo-box.light {
+            background: var(--bg);
+        }
+
+        .logo-box.white {
+            background: var(--white);
+        }
+
+        .logo-box.dark {
+            background: var(--text);
+        }
+
+        .logo-box.taupe {
+            background: var(--bg-card);
+        }
+
+        .logo-box-label {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            opacity: 0.6;
+        }
+
+        .logo-box.dark .logo-box-label {
+            color: rgba(243, 238, 231, 0.5);
+        }
+
+        /* ============================================
+           CONCEPT 1: PURE WORDMARK
+        ============================================ */
+        .wordmark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 300;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-indent: 12px; /* compensate for letter-spacing on last char */
+            user-select: none;
+        }
+
+        .wordmark.large {
+            font-size: 3.2rem;
+        }
+
+        .wordmark.medium {
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            text-indent: 8px;
+        }
+
+        .wordmark.small {
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            text-indent: 6px;
+        }
+
+        .wordmark.charcoal { color: var(--text); }
+        .wordmark.linen { color: var(--bg); }
+        .wordmark.white-text { color: var(--white); }
+
+        /* ============================================
+           CONCEPT 2: WORDMARK WITH RULE
+        ============================================ */
+        .wordmark-ruled {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .wordmark-ruled .rule-above {
+            width: 100%;
+            max-width: 280px;
+            height: 1px;
+            margin-bottom: 16px;
+        }
+
+        .wordmark-ruled .rule-below {
+            width: 100%;
+            max-width: 280px;
+            height: 1px;
+            margin-top: 16px;
+        }
+
+        .rule-charcoal { background: rgba(49, 49, 49, 0.25); }
+        .rule-linen { background: rgba(243, 238, 231, 0.3); }
+
+        /* Variant: double rule (above + below) */
+        .wordmark-framed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wordmark-framed .rule {
+            width: 100%;
+            max-width: 280px;
+            height: 1px;
+        }
+
+        .wordmark-framed .wordmark {
+            padding: 14px 0;
+        }
+
+        /* ============================================
+           CONCEPT 3: LETTERMARK
+        ============================================ */
+        .lettermark-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lettermark-row {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .lettermark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        /* Circle variant */
+        .lettermark-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-indent: 2px;
+        }
+
+        .lettermark-circle.large {
+            width: 80px;
+            height: 80px;
+            font-size: 2.6rem;
+        }
+
+        .lettermark-circle.small {
+            width: 40px;
+            height: 40px;
+            font-size: 1.3rem;
+        }
+
+        .lettermark-circle.outline-charcoal {
+            border: 1px solid rgba(49, 49, 49, 0.3);
+            color: var(--text);
+        }
+
+        .lettermark-circle.outline-linen {
+            border: 1px solid rgba(243, 238, 231, 0.35);
+            color: var(--bg);
+        }
+
+        .lettermark-circle.solid-charcoal {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .lettermark-circle.solid-linen {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Square/favicon variant */
+        .lettermark-square {
+            width: 48px;
+            height: 48px;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-indent: 1px;
+        }
+
+        .lettermark-square.small {
+            width: 32px;
+            height: 32px;
+            font-size: 1.1rem;
+        }
+
+        .lettermark-square.bg-charcoal {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .lettermark-square.bg-linen {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Bare lettermark (no container) */
+        .lettermark-bare {
+            font-size: 3.6rem;
+            letter-spacing: 3px;
+            text-indent: 3px;
+        }
+
+        .lettermark-bare.charcoal { color: var(--text); }
+        .lettermark-bare.linen { color: var(--bg); }
+
+        /* Use-case labels */
+        .use-labels {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        .use-label {
+            font-size: 0.58rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            opacity: 0.6;
+            text-align: center;
+        }
+
+        .logo-box.dark .use-label {
+            color: rgba(243, 238, 231, 0.45);
+        }
+
+        /* ============================================
+           LOCKUP SECTION (SUB-BRAND)
+        ============================================ */
+        .subbrand-lockup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .subbrand-lockup .parent-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .subbrand-lockup .entity-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 300;
+            font-size: 1.8rem;
+            letter-spacing: 6px;
+            text-indent: 6px;
+        }
+
+        .subbrand-lockup.charcoal .parent-name { color: var(--text-mid); }
+        .subbrand-lockup.charcoal .entity-name { color: var(--text); }
+        .subbrand-lockup.linen .parent-name { color: rgba(243, 238, 231, 0.55); }
+        .subbrand-lockup.linen .entity-name { color: var(--bg); }
+
+        /* ============================================
+           SPACING GUIDE
+        ============================================ */
+        .spacing-note {
+            font-size: 0.78rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            line-height: 1.75;
+            max-width: 560px;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(212, 196, 176, 0.3);
+        }
+
+        .spacing-note strong {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 768px) {
+            .logo-row {
+                grid-template-columns: 1fr;
+            }
+
+            .wordmark.large {
+                font-size: 2.4rem;
+                letter-spacing: 8px;
+                text-indent: 8px;
+            }
+
+            .concept {
+                padding: 50px 1.5rem 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <div class="page-header">
+        <div class="eyebrow">BRAND IDENTITY</div>
+        <div class="divider"></div>
+        <h1>Logo Concepts</h1>
+        <p>Three directions for the Solanki wordmark, aligned with the Aman quiet luxury aesthetic. Typography as identity.</p>
+    </div>
+
+    <!-- ========== CONCEPT 1: PURE WORDMARK ========== -->
+    <div class="concept">
+        <div class="concept-inner">
+            <div class="concept-label">Concept 01</div>
+            <h2 class="concept-title">Pure Wordmark <span class="concept-recommended">Recommended</span></h2>
+            <p class="concept-desc">The name alone. Cormorant Garamond Light at generous letter-spacing. No symbol, no decoration. The restraint is the luxury. This is the Aman approach.</p>
+
+            <div class="logo-row">
+                <div class="logo-box light">
+                    <span class="logo-box-label">On Linen</span>
+                    <div class="wordmark large charcoal">SOLANKI</div>
+                </div>
+                <div class="logo-box dark">
+                    <span class="logo-box-label">On Dark</span>
+                    <div class="wordmark large linen">SOLANKI</div>
+                </div>
+            </div>
+
+            <div class="logo-row">
+                <div class="logo-box white">
+                    <span class="logo-box-label">On White</span>
+                    <div class="wordmark large charcoal">SOLANKI</div>
+                </div>
+                <div class="logo-box taupe">
+                    <span class="logo-box-label">On Taupe</span>
+                    <div class="wordmark large charcoal">SOLANKI</div>
+                </div>
+            </div>
+
+            <!-- Size variations -->
+            <div class="logo-row">
+                <div class="logo-box light" style="min-height: 140px;">
+                    <span class="logo-box-label">Medium</span>
+                    <div class="wordmark medium charcoal">SOLANKI</div>
+                </div>
+                <div class="logo-box light" style="min-height: 140px;">
+                    <span class="logo-box-label">Small</span>
+                    <div class="wordmark small charcoal">SOLANKI</div>
+                </div>
+            </div>
+
+            <p class="spacing-note"><strong>Specs:</strong> Cormorant Garamond, weight 300, letter-spacing 12px (large) / 8px (medium) / 6px (small). Color: #313131 on light, #F3EEE7 on dark. Always center-aligned. Minimum clear space equal to the cap-height of the "S" on all sides.</p>
+        </div>
+    </div>
+
+    <!-- ========== CONCEPT 2: WORDMARK WITH RULE ========== -->
+    <div class="concept">
+        <div class="concept-inner">
+            <div class="concept-label">Concept 02</div>
+            <h2 class="concept-title">Wordmark with Rule</h2>
+            <p class="concept-desc">A single thin line above or below the wordmark. Barely there, but it gives the mark a subtle frame. Echoes the divider language already in the site design.</p>
+
+            <div class="logo-row">
+                <div class="logo-box light">
+                    <span class="logo-box-label">Rule Below</span>
+                    <div class="wordmark-ruled">
+                        <div class="wordmark medium charcoal">SOLANKI</div>
+                        <div class="rule-below rule-charcoal"></div>
+                    </div>
+                </div>
+                <div class="logo-box dark">
+                    <span class="logo-box-label">Rule Below</span>
+                    <div class="wordmark-ruled">
+                        <div class="wordmark medium linen">SOLANKI</div>
+                        <div class="rule-below rule-linen"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-row">
+                <div class="logo-box light">
+                    <span class="logo-box-label">Rule Above</span>
+                    <div class="wordmark-ruled">
+                        <div class="rule-above rule-charcoal"></div>
+                        <div class="wordmark medium charcoal">SOLANKI</div>
+                    </div>
+                </div>
+                <div class="logo-box white">
+                    <span class="logo-box-label">Double Rule</span>
+                    <div class="wordmark-framed">
+                        <div class="rule rule-charcoal"></div>
+                        <div class="wordmark medium charcoal">SOLANKI</div>
+                        <div class="rule rule-charcoal"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="spacing-note"><strong>Specs:</strong> Rule is 1px, color rgba(49,49,49,0.25) on light / rgba(243,238,231,0.3) on dark. Rule width matches the wordmark width. 16px gap between rule and baseline/cap-line.</p>
+        </div>
+    </div>
+
+    <!-- ========== CONCEPT 3: LETTERMARK ========== -->
+    <div class="concept">
+        <div class="concept-inner">
+            <div class="concept-label">Concept 03</div>
+            <h2 class="concept-title">S Lettermark</h2>
+            <p class="concept-desc">A compact "S" for favicons, social avatars, and app icons. The primary identity stays as the full wordmark — this is the supporting mark for small-format contexts.</p>
+
+            <!-- Circle variants -->
+            <div class="logo-row">
+                <div class="logo-box light">
+                    <span class="logo-box-label">Circle Outline</span>
+                    <div class="lettermark-container">
+                        <div class="lettermark-row">
+                            <div class="lettermark lettermark-circle large outline-charcoal">S</div>
+                            <div class="lettermark lettermark-circle outline-charcoal">S</div>
+                            <div class="lettermark lettermark-circle small outline-charcoal">S</div>
+                        </div>
+                        <div class="use-labels">
+                            <span class="use-label">Social</span>
+                            <span class="use-label">Avatar</span>
+                            <span class="use-label">Favicon</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-box dark">
+                    <span class="logo-box-label">Circle Outline</span>
+                    <div class="lettermark-container">
+                        <div class="lettermark-row">
+                            <div class="lettermark lettermark-circle large outline-linen">S</div>
+                            <div class="lettermark lettermark-circle outline-linen">S</div>
+                            <div class="lettermark lettermark-circle small outline-linen">S</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solid + Square variants -->
+            <div class="logo-row">
+                <div class="logo-box white">
+                    <span class="logo-box-label">Solid Fill</span>
+                    <div class="lettermark-container">
+                        <div class="lettermark-row">
+                            <div class="lettermark lettermark-circle large solid-charcoal">S</div>
+                            <div class="lettermark lettermark-square bg-charcoal">S</div>
+                            <div class="lettermark lettermark-square small bg-charcoal">S</div>
+                        </div>
+                        <div class="use-labels">
+                            <span class="use-label">App Icon</span>
+                            <span class="use-label">Favicon</span>
+                            <span class="use-label">16px</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-box taupe">
+                    <span class="logo-box-label">Bare Lettermark</span>
+                    <div class="lettermark-container">
+                        <div class="lettermark-row">
+                            <div class="lettermark lettermark-bare charcoal">S</div>
+                        </div>
+                        <div class="use-labels">
+                            <span class="use-label">Watermark / Large Format</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="spacing-note"><strong>Specs:</strong> "S" in Cormorant Garamond weight 300. Circle: 1px stroke, rgba opacity for subtlety. Square: solid fill for high-contrast contexts (favicons, app icons). The bare lettermark is for oversized, decorative use only.</p>
+        </div>
+    </div>
+
+    <!-- ========== BONUS: SUB-BRAND LOCKUP ========== -->
+    <div class="concept">
+        <div class="concept-inner">
+            <div class="concept-label">System Preview</div>
+            <h2 class="concept-title">Sub-Brand Lockups</h2>
+            <p class="concept-desc">How the wordmark system extends across the ecosystem. Mora Sol entities use the "MORA SOL" parent label; Foundation and Travel are branded under Solanki directly.</p>
+
+            <div class="logo-row">
+                <div class="logo-box light" style="min-height: 180px;">
+                    <span class="logo-box-label">Capital</span>
+                    <div class="subbrand-lockup charcoal">
+                        <div class="parent-name">MORA SOL</div>
+                        <div class="entity-name">CAPITAL</div>
+                    </div>
+                </div>
+                <div class="logo-box dark" style="min-height: 180px;">
+                    <span class="logo-box-label">Advisory</span>
+                    <div class="subbrand-lockup linen">
+                        <div class="parent-name">MORA SOL</div>
+                        <div class="entity-name">ADVISORY</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-row">
+                <div class="logo-box white" style="min-height: 180px;">
+                    <span class="logo-box-label">Digital</span>
+                    <div class="subbrand-lockup charcoal">
+                        <div class="parent-name">MORA SOL</div>
+                        <div class="entity-name">DIGITAL</div>
+                    </div>
+                </div>
+                <div class="logo-box taupe" style="min-height: 180px;">
+                    <span class="logo-box-label">Studios</span>
+                    <div class="subbrand-lockup charcoal">
+                        <div class="parent-name">MORA SOL</div>
+                        <div class="entity-name">STUDIOS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-row">
+                <div class="logo-box light" style="min-height: 180px;">
+                    <span class="logo-box-label">Foundation</span>
+                    <div class="subbrand-lockup charcoal">
+                        <div class="parent-name">THE SOLANKI</div>
+                        <div class="entity-name">FOUNDATION</div>
+                    </div>
+                </div>
+                <div class="logo-box dark" style="min-height: 180px;">
+                    <span class="logo-box-label">Private Travel</span>
+                    <div class="subbrand-lockup linen">
+                        <div class="parent-name">SOLANKI</div>
+                        <div class="entity-name">PRIVATE TRAVEL</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="spacing-note"><strong>Specs:</strong> Parent label in Inter, weight 500, 0.58rem, letter-spacing 2.5px. Entity name in Cormorant Garamond, weight 300, 1.8rem, letter-spacing 6px. 6px gap between label and name. Foundation uses "THE SOLANKI" and Travel uses "SOLANKI" — neither is a Mora Sol entity.</p>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer style="text-align: center; padding: 4rem 2rem 3rem; border-top: 1px solid rgba(212, 196, 176, 0.3);">
+        <p style="font-size: 0.78rem; color: var(--text-mid); font-weight: 300;">Solanki Brand Identity Concepts — February 2026</p>
+    </footer>
+
+</body>
+</html>
