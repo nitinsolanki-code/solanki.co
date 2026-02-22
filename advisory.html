@@ -82,6 +82,11 @@
         .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1px; margin-top: 2px; }
         .footer-rule { width: 32px; height: 1px; background: var(--accent); margin: 0 auto 1.5rem; }
         .footer-copy { font-size: 0.75rem; color: var(--text-mid); letter-spacing: 0.5px; margin-bottom: 1.25rem; font-weight: 300; }
+        .footer-socials { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid rgba(212, 196, 176, 0.5); border-radius: 50%; transition: all 0.3s ease; }
+        .footer-socials a:hover { border-color: var(--accent); background: rgba(232, 223, 211, 0.4); }
+        .footer-socials a svg { width: 14px; height: 14px; fill: var(--text-mid); transition: fill 0.3s ease; }
+        .footer-socials a:hover svg { fill: var(--text); }
         .footer-links { display: flex; justify-content: center; gap: 2rem; }
         .footer-links a { font-size: 0.72rem; color: var(--text-mid); text-decoration: none; letter-spacing: 0.5px; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text); }
@@ -206,8 +211,16 @@
             </span>
         </div>
         <div class="footer-rule"></div>
+        <div class="footer-socials">
+            <a href="https://instagram.com/solanki.co" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.957c.453.453.757.91.957 1.47.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.957 1.47 4.08 4.08 0 01-1.47.957c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.957 4.08 4.08 0 01-.957-1.47c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.957-1.47A4.08 4.08 0 015.063 2.3c.46-.163 1.26-.35 2.43-.403C8.759 1.84 9.139 1.827 12 1.827zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126A5.876 5.876 0 004.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://x.com/solanki" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
         <p class="footer-copy">&copy; 2026 Solanki Co</p>
-        <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Connect</a></div>
+        <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
     </footer>
 
     <script>
