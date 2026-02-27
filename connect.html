@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect – Solanki Co</title>
+    <meta name="description" content="Book a conversation with Nitin Solanki. Whether it's a quick introduction, an exploratory discussion, or an advisory session — find the right time.">
+    <meta property="og:title" content="Connect – Solanki Co">
+    <meta property="og:description" content="Book a conversation with Nitin Solanki. Quick introductions, exploratory discussions, and advisory sessions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solanki.co/connect.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@solanki">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%231A1C1E'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='300' fill='%23FCFAF7' letter-spacing='2'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FCFAF7;
+            --bg-card: #E2DBD6;
+            --accent: #D4C4B0;
+            --text: #1A1C1E;
+            --text-mid: rgb(120, 110, 100);
+            --white: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 18px 20px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            background: rgba(252, 250, 247, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(252, 250, 247, 0.95);
+            border-bottom: 1px solid rgba(212, 196, 176, 0.3);
+        }
+
+        .hamburger { display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+        .hamburger-lines { display: flex; flex-direction: column; justify-content: center; width: 20px; height: 14px; }
+        .hamburger-lines span { display: block; width: 100%; height: 1px; background: var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hamburger-lines span:first-child { margin-bottom: 5px; }
+        .hamburger-label { font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: var(--text); display: none; }
+        .hamburger.active .hamburger-lines span:first-child { transform: rotate(45deg) translate(2px, 2px); }
+        .hamburger.active .hamburger-lines span:last-child { transform: rotate(-45deg) translate(2px, -2px); }
+        .hamburger.active .hamburger-label { visibility: hidden; }
+
+        .header-logo { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; justify-self: center; }
+        .logo-mark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; font-weight: 300; color: var(--text); width: 36px; height: 36px; background: var(--bg-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; letter-spacing: 1px; }
+        .logo-divider { width: 1px; height: 28px; background: var(--accent); }
+        .logo-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+        .logo-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; color: var(--text); letter-spacing: 3px; }
+        .logo-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; margin-top: 3px; }
+
+        .nav-desktop { display: none; align-items: center; gap: 40px; }
+        .nav-desktop a { font-size: 0.625rem; font-weight: 400; color: var(--text); text-decoration: none; letter-spacing: 1.2px; text-transform: uppercase; transition: opacity 0.4s; }
+        .nav-desktop a:hover { opacity: 0.5; }
+
+        .header-right { display: flex; justify-content: flex-end; }
+        .connect-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; background: var(--text); color: var(--bg); border: 1px solid var(--text); text-decoration: none; font-size: 0.6rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; min-height: 44px; white-space: nowrap; transition: opacity 0.4s; }
+        .connect-btn:hover { background: transparent; color: var(--text); }
+
+        /* Mobile Nav */
+        .mobile-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 320px; max-width: 85vw; background: var(--bg); z-index: 1002; display: flex; flex-direction: column; align-items: flex-start; padding: 6rem 2.5rem 3rem; gap: 0; transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 4px 0 24px rgba(0, 0, 0, 0); }
+        .mobile-nav.active { transform: translateX(0); box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08); }
+        .mobile-nav-label { font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 2rem; }
+        .mobile-nav a { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 400; color: var(--text); text-decoration: none; padding: 0.65rem 0; width: 100%; transition: opacity 0.3s; }
+        .mobile-nav a:hover { opacity: 0.5; }
+
+        .nav-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 28, 30, 0.15); z-index: 1001; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+        .nav-backdrop.active { opacity: 1; pointer-events: auto; }
+
+        /* ============================================
+           MAIN CONTENT
+        ============================================ */
+        main { margin-top: 72px; }
+
+        .eyebrow { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 1.25rem; }
+        .line-accent { width: 48px; height: 2px; background: var(--text); margin-bottom: 1.5rem; }
+
+        /* ============================================
+           CONNECT HERO
+        ============================================ */
+        .connect-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 80px;
+            text-align: center;
+        }
+
+        .connect-hero-content {
+            max-width: 600px;
+            animation: fadeIn 1.2s ease 0.3s backwards;
+        }
+
+        .connect-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 300;
+            letter-spacing: clamp(4px, 1vw, 10px);
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .connect-hero p {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           BOOKING CARDS
+        ============================================ */
+        .booking-section {
+            padding: 0 2rem 100px;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .booking-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.5rem 2.5rem;
+            background: var(--white);
+            border: 1px solid rgba(212, 196, 176, 0.4);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .booking-card:hover {
+            border-color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(26, 28, 30, 0.06);
+        }
+
+        .booking-card-content {
+            flex: 1;
+        }
+
+        .booking-card-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .booking-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .booking-card-meta span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--text-mid);
+            letter-spacing: 0.5px;
+        }
+
+        .booking-card-arrow {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--accent);
+            margin-left: 2rem;
+            transition: transform 0.3s, color 0.3s;
+            flex-shrink: 0;
+        }
+
+        .booking-card:hover .booking-card-arrow {
+            transform: translateX(4px);
+            color: var(--text);
+        }
+
+        /* ============================================
+           NOTE SECTION
+        ============================================ */
+        .connect-note {
+            padding: 80px 2rem;
+            background: var(--bg-card);
+            text-align: center;
+        }
+
+        .connect-note-inner {
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .connect-note p {
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .connect-note a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Back link */
+        .back-section { padding: 48px 2rem; text-align: center; }
+        .back-link { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 1px; color: var(--text-mid); text-decoration: none; transition: color 0.3s; }
+        .back-link:hover { color: var(--text); }
+        .back-link span { margin-right: 6px; }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer { background: var(--bg); border-top: 1px solid rgba(212, 196, 176, 0.4); padding: 60px 2rem 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+        .footer-wordmark { display: flex; align-items: center; gap: 0.5rem; }
+        .footer-mark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 300; color: var(--text); }
+        .footer-divider { width: 1px; height: 24px; background: var(--accent); }
+        .footer-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 4px; color: var(--text); }
+        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; margin-top: 2px; }
+        .footer-rule { width: 48px; height: 1px; background: var(--accent); }
+        .footer-socials { display: flex; gap: 1.25rem; }
+        .footer-socials a { color: var(--text-mid); transition: color 0.3s; }
+        .footer-socials a:hover { color: var(--text); }
+        .footer-socials svg { width: 18px; height: 18px; }
+        .footer-copy { font-size: 0.72rem; color: var(--text-mid); font-weight: 300; letter-spacing: 0.5px; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { font-size: 0.72rem; color: var(--text-mid); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--text); }
+
+        /* ============================================
+           FADE-IN
+        ============================================ */
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 767px) {
+            body { line-height: 1.7; }
+            .booking-card { flex-direction: column; align-items: flex-start; padding: 2rem; }
+            .booking-card-arrow { margin-left: 0; margin-top: 1rem; }
+        }
+
+        @media (min-width: 768px) {
+            header { padding: 20px 40px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .hamburger-label { display: block; }
+            .logo-name { font-size: 1.2rem; }
+            .connect-btn { font-size: 0.65rem; padding: 11px 20px; }
+            .booking-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 1024px) {
+            header { padding: 22px 60px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .logo-name { font-size: 1.3rem; letter-spacing: 3px; }
+            .nav-desktop { display: flex; justify-self: end; }
+            .nav-desktop .connect-btn { font-size: 0.7rem; padding: 12px 28px; }
+            .header-right { display: none; }
+            .hamburger-lines { width: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <div class="hamburger-lines">
+                <span></span>
+                <span></span>
+            </div>
+            <span class="hamburger-label">Menu</span>
+        </button>
+
+        <a href="index.html" class="header-logo">
+            <span class="logo-mark">S</span>
+            <span class="logo-divider"></span>
+            <span class="logo-text">
+                <span class="logo-name">SOLANKI</span>
+                <span class="logo-co">CO</span>
+            </span>
+        </a>
+
+        <div class="header-right">
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </div>
+
+        <nav class="nav-desktop">
+            <a href="foundation.html">Foundation</a>
+            <a href="capital.html">Capital</a>
+            <a href="advisory.html">Advisory</a>
+            <a href="digital.html">Digital</a>
+            <a href="studios.html">Studios</a>
+            <a href="travel.html">Travel</a>
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </nav>
+    </header>
+
+    <!-- Nav Backdrop -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-label">Main Menu</span>
+        <a href="foundation.html">Foundation</a>
+        <a href="capital.html">Capital</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="digital.html">Digital</a>
+        <a href="studios.html">Studios</a>
+        <a href="travel.html">Travel</a>
+    </nav>
+
+    <main>
+
+        <!-- ========== CONNECT HERO ========== -->
+        <section class="connect-hero">
+            <div class="connect-hero-content">
+                <div class="eyebrow" style="text-align:center;">Connect</div>
+                <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                <h1>Let's Talk</h1>
+                <p>Whether it's a quick introduction, an exploratory conversation, or a focused advisory session — find the format that fits.</p>
+            </div>
+        </section>
+
+        <!-- ========== BOOKING CARDS ========== -->
+        <section class="booking-section">
+            <div class="booking-grid">
+
+                <a href="https://tidycal.com/solanki/15-minute-meeting" target="_blank" rel="noopener" class="booking-card fade-in">
+                    <div class="booking-card-content">
+                        <div class="booking-card-label">Quick Introduction</div>
+                        <h3>15-Minute Call</h3>
+                        <p class="booking-card-desc">A brief, focused conversation to explore alignment and see if there's a reason to continue the dialogue.</p>
+                        <div class="booking-card-meta">
+                            <span>15 minutes</span>
+                            <span>·</span>
+                            <span>Complimentary</span>
+                        </div>
+                    </div>
+                    <span class="booking-card-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://tidycal.com/solanki/30-minute-meeting" target="_blank" rel="noopener" class="booking-card fade-in">
+                    <div class="booking-card-content">
+                        <div class="booking-card-label">Exploratory Conversation</div>
+                        <h3>30-Minute Call</h3>
+                        <p class="booking-card-desc">A deeper discussion to understand your situation, explore potential collaboration, and identify the right next step.</p>
+                        <div class="booking-card-meta">
+                            <span>30 minutes</span>
+                            <span>·</span>
+                            <span>Complimentary</span>
+                        </div>
+                    </div>
+                    <span class="booking-card-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://tidycal.com/solanki/60-minute-meeting" target="_blank" rel="noopener" class="booking-card fade-in">
+                    <div class="booking-card-content">
+                        <div class="booking-card-label">Advisory Session</div>
+                        <h3>60-Minute Call</h3>
+                        <p class="booking-card-desc">A structured session for specific challenges — strategy, capital decisions, digital execution, or venture building.</p>
+                        <div class="booking-card-meta">
+                            <span>1 hour</span>
+                            <span>·</span>
+                            <span>$60</span>
+                        </div>
+                    </div>
+                    <span class="booking-card-arrow">&rarr;</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ========== NOTE ========== -->
+        <section class="connect-note fade-in">
+            <div class="connect-note-inner">
+                <p>Prefer email? Reach out directly at <a href="mailto:nitin@solanki.co">nitin@solanki.co</a></p>
+            </div>
+        </section>
+
+        <!-- ========== BACK ========== -->
+        <div class="back-section fade-in">
+            <a href="index.html" class="back-link"><span>&larr;</span> Back to Ecosystem</a>
+        </div>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-wordmark">
+            <span class="footer-mark">S</span>
+            <span class="footer-divider"></span>
+            <span class="footer-text">
+                <span class="footer-name">SOLANKI</span>
+                <span class="footer-co">CO</span>
+            </span>
+        </div>
+        <div class="footer-rule"></div>
+        <div class="footer-socials">
+            <a href="https://instagram.com/solanki.co" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.957c.453.453.757.91.957 1.47.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.957 1.47 4.08 4.08 0 01-1.47.957c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.957 4.08 4.08 0 01-.957-1.47c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.957-1.47A4.08 4.08 0 015.063 2.3c.46-.163 1.26-.35 2.43-.403C8.759 1.84 9.139 1.827 12 1.827zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126A5.876 5.876 0 004.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://x.com/solanki" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Solanki Co</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger / Mobile Nav
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const navBackdrop = document.getElementById('navBackdrop');
+
+        function openNav() {
+            hamburger.classList.add('active');
+            hamburger.setAttribute('aria-expanded', 'true');
+            mobileNav.classList.add('active');
+            navBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNav() {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileNav.classList.remove('active');
+            navBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.contains('active') ? closeNav() : openNav();
+        });
+
+        navBackdrop.addEventListener('click', closeNav);
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
