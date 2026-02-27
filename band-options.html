@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Footer Band Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FCFAF7;
+            --bg-card: #E2DBD6;
+            --accent: #D4C4B0;
+            --text: #1A1C1E;
+            --text-mid: rgb(120, 110, 100);
+            --white: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        /* ============================================
+           SHARED: Section Labels
+        ============================================ */
+        .option-label {
+            text-align: center;
+            padding: 60px 2rem 20px;
+            background: var(--bg);
+        }
+
+        .option-label h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        .option-label p {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            font-weight: 300;
+        }
+
+        .option-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.4;
+        }
+
+        /* ============================================
+           SHARED: Footer mock (just to show context)
+        ============================================ */
+        .footer-mock {
+            background: var(--bg);
+            border-top: 1px solid rgba(212, 196, 176, 0.4);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-mock-wordmark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-mock-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text);
+            width: 28px;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-mock-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--text);
+        }
+
+        .footer-mock p {
+            font-size: 0.7rem;
+            color: var(--text-mid);
+            font-weight: 300;
+        }
+
+        /* ============================================
+           OPTION A: Routing Cards
+        ============================================ */
+        .band-routing {
+            background: var(--bg-card);
+            padding: 80px 2rem;
+        }
+
+        .band-routing-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .band-routing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .band-routing-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+        }
+
+        .band-routing-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        .routing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .routing-card {
+            background: var(--bg);
+            padding: 2rem 1.75rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .routing-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .routing-card-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        .routing-card h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+
+        .routing-card p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        .routing-card-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .routing-card-link span {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.8rem;
+        }
+
+        .routing-card:hover .routing-card-link span {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 767px) {
+            .routing-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           OPTION B: Conviction Statement
+        ============================================ */
+        .band-conviction {
+            background: var(--bg-card);
+            padding: 100px 2rem;
+        }
+
+        .band-conviction-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .band-conviction-rule {
+            width: 48px;
+            height: 2px;
+            background: var(--text);
+            margin: 0 auto 2.5rem;
+        }
+
+        .band-conviction-quote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.35;
+            margin-bottom: 2rem;
+        }
+
+        .band-conviction-attr {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+        }
+
+        /* ============================================
+           OPTION C: Simple Email Capture
+        ============================================ */
+        .band-touch {
+            background: var(--bg-card);
+            padding: 80px 2rem;
+        }
+
+        .band-touch-inner {
+            max-width: 540px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .band-touch-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+        }
+
+        .band-touch-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .band-touch-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .band-touch-form {
+            display: flex;
+            gap: 0;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .band-touch-input {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            padding: 14px 18px;
+            border: 1px solid var(--accent);
+            border-right: none;
+            background: var(--bg);
+            color: var(--text);
+            outline: none;
+            letter-spacing: 0.3px;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .band-touch-input::placeholder {
+            color: var(--text-mid);
+            font-weight: 300;
+        }
+
+        .band-touch-input:focus {
+            border-color: var(--text);
+        }
+
+        .band-touch-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 14px 24px;
+            background: var(--text);
+            color: var(--bg);
+            border: 1px solid var(--text);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .band-touch-btn:hover {
+            background: transparent;
+            color: var(--text);
+        }
+
+        .band-touch-note {
+            font-size: 0.7rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            .band-touch-form {
+                flex-direction: column;
+                gap: 0;
+            }
+            .band-touch-input {
+                border-right: 1px solid var(--accent);
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         OPTION A: "What brings you here?" Routing Cards
+    ============================================ -->
+    <div class="option-label">
+        <h2>Option A</h2>
+        <p>Routing cards — "What brings you here?"</p>
+    </div>
+
+    <section class="band-routing">
+        <div class="band-routing-inner">
+            <div class="band-routing-header">
+                <div class="band-routing-eyebrow">What brings you here?</div>
+                <h2 class="band-routing-title">Find Your Starting Point</h2>
+            </div>
+            <div class="routing-grid">
+                <a href="foundation.html" class="routing-card">
+                    <div class="routing-card-label">Impact</div>
+                    <h3>The Foundation</h3>
+                    <p>Learn about our mission supporting South Asian women through mental health resources and community.</p>
+                    <div class="routing-card-link">Learn More <span>&rarr;</span></div>
+                </a>
+                <a href="capital.html" class="routing-card">
+                    <div class="routing-card-label">Investment</div>
+                    <h3>Capital & Advisory</h3>
+                    <p>Disciplined capital and selective counsel for founders navigating inflection points.</p>
+                    <div class="routing-card-link">Explore <span>&rarr;</span></div>
+                </a>
+                <a href="digital.html" class="routing-card">
+                    <div class="routing-card-label">Growth</div>
+                    <h3>Digital & Studios</h3>
+                    <p>AI automation, revenue infrastructure, and editorial storytelling that scales.</p>
+                    <div class="routing-card-link">See How <span>&rarr;</span></div>
+                </a>
+                <a href="travel.html" class="routing-card">
+                    <div class="routing-card-label">Experience</div>
+                    <h3>Private Travel</h3>
+                    <p>Tailor-made itineraries built on taste, discretion, and trusted partnerships.</p>
+                    <div class="routing-card-link">Discover <span>&rarr;</span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-mock">
+        <div class="footer-mock-wordmark">
+            <span class="footer-mock-mark">S</span>
+            <span class="footer-mock-name">SOLANKI</span>
+        </div>
+        <p>&copy; 2026 Solanki Co</p>
+    </div>
+
+    <div class="option-divider"></div>
+
+    <!-- ============================================
+         OPTION B: Conviction Statement
+    ============================================ -->
+    <div class="option-label">
+        <h2>Option B</h2>
+        <p>Conviction statement — a grounding closing thought</p>
+    </div>
+
+    <section class="band-conviction">
+        <div class="band-conviction-inner">
+            <div class="band-conviction-rule"></div>
+            <p class="band-conviction-quote">Move forward with quiet strength. Treat people with integrity. Build something that outlasts you.</p>
+            <div class="band-conviction-attr">Morarbhai Solanki &mdash; The Spirit Behind Mora Sol</div>
+        </div>
+    </section>
+
+    <div class="footer-mock">
+        <div class="footer-mock-wordmark">
+            <span class="footer-mock-mark">S</span>
+            <span class="footer-mock-name">SOLANKI</span>
+        </div>
+        <p>&copy; 2026 Solanki Co</p>
+    </div>
+
+    <div class="option-divider"></div>
+
+    <!-- ============================================
+         OPTION C: Simple Email Capture
+    ============================================ -->
+    <div class="option-label">
+        <h2>Option C</h2>
+        <p>Simple email field — low-commitment stay in touch</p>
+    </div>
+
+    <section class="band-touch">
+        <div class="band-touch-inner">
+            <div class="band-touch-eyebrow">Stay Connected</div>
+            <h2 class="band-touch-title">We'll Be in Touch When It Matters</h2>
+            <p class="band-touch-subtitle">No newsletter. No noise. Just a line open for when something is worth sharing.</p>
+            <form class="band-touch-form" onsubmit="event.preventDefault()">
+                <input type="email" class="band-touch-input" placeholder="Your email" required>
+                <button type="submit" class="band-touch-btn">Connect</button>
+            </form>
+            <p class="band-touch-note">We respect your inbox.</p>
+        </div>
+    </section>
+
+    <div class="footer-mock">
+        <div class="footer-mock-wordmark">
+            <span class="footer-mock-mark">S</span>
+            <span class="footer-mock-name">SOLANKI</span>
+        </div>
+        <p>&copy; 2026 Solanki Co</p>
+    </div>
+
+</body>
+</html>

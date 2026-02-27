@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Solanki Foundation – Impact</title>
+    <meta name="description" content="Supporting South Asian women impacted by relationship trauma through culturally competent mental health resources, community, and pathways to stability.">
+    <meta property="og:title" content="The Solanki Foundation – Impact Through Purpose">
+    <meta property="og:description" content="Supporting South Asian women impacted by relationship trauma through culturally competent mental health resources, community, and pathways to stability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solanki.co/foundation.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@solanki">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%231A1C1E'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='300' fill='%23FCFAF7' letter-spacing='2'%3ES%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +20,7 @@
 
         :root {
             --bg: #FCFAF7;
-            --bg-card: #E8DFD3;
+            --bg-card: #E2DBD6;
             --accent: #D4C4B0;
             --text: #1A1C1E;
             --text-mid: rgb(120, 110, 100);
@@ -173,11 +180,11 @@
         }
 
         .nav-desktop a {
-            font-size: 0.75rem;
+            font-size: 0.625rem;
             font-weight: 400;
             color: var(--text);
             text-decoration: none;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -214,34 +221,67 @@
         }
 
         /* Mobile Nav Overlay */
+        /* Mobile Nav — Left-Slide Panel (Janu pattern) */
         .mobile-nav {
-            display: none;
             position: fixed;
-            top: 72px; left: 0; right: 0; bottom: 0;
+            top: 0; left: 0; bottom: 0;
+            width: 320px;
+            max-width: 85vw;
             background: var(--bg);
-            z-index: 999;
+            z-index: 1002;
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 3rem 2.5rem;
+            padding: 6rem 2.5rem 3rem;
             gap: 0;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0);
         }
 
-        .mobile-nav.active { display: flex; }
+        .mobile-nav.active {
+            transform: translateX(0);
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .mobile-nav-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 2rem;
+        }
 
         .mobile-nav a {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 400;
             color: var(--text);
             text-decoration: none;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(212, 196, 176, 0.3);
+            padding: 0.65rem 0;
             width: 100%;
-            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mobile-nav a:last-child { border-bottom: none; }
-        .mobile-nav a:hover { color: var(--accent); }
+        .mobile-nav a:hover { opacity: 0.5; }
+
+        /* Backdrop overlay */
+        .nav-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(26, 28, 30, 0.15);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
         /* ============================================
            MAIN CONTENT
@@ -252,9 +292,9 @@
 
         .eyebrow {
             font-family: 'Inter', sans-serif;
-            font-size: 0.68rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            letter-spacing: 2.5px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-mid);
             margin-bottom: 1.25rem;
@@ -701,6 +741,11 @@
         /* ============================================
            RESPONSIVE
         ============================================ */
+        /* Mobile line-height bump */
+        @media (max-width: 767px) {
+            body { line-height: 1.7; }
+        }
+
         @media (min-width: 768px) {
             header {
                 padding: 20px 40px;
@@ -775,8 +820,12 @@
         </nav>
     </header>
 
-    <!-- Mobile Nav -->
+    <!-- Nav Backdrop -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- Mobile Nav — Left-Slide Panel -->
     <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-label">Main Menu</span>
         <a href="foundation.html">Foundation</a>
         <a href="capital.html">Capital</a>
         <a href="advisory.html">Advisory</a>
