@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vCard Fields — iOS vs Android</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #FCFAF7; color: #1A1C1E; padding: 40px 24px; line-height: 1.6; }
+  h1 { font-family: Georgia, serif; font-size: 28px; font-weight: 400; letter-spacing: 1px; margin-bottom: 8px; }
+  .subtitle { font-size: 13px; color: #786E64; margin-bottom: 32px; }
+  table { width: 100%; max-width: 900px; border-collapse: collapse; margin-bottom: 48px; }
+  th { background: #E8DFD3; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-align: left; padding: 12px 16px; border-bottom: 2px solid #D4C4B0; }
+  td { padding: 10px 16px; border-bottom: 1px solid #E8DFD3; font-size: 14px; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .field-name { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; color: #786E64; }
+  .value { font-weight: 500; }
+  .check { color: #4A7C59; }
+  .x { color: #A0897A; }
+  .note { font-size: 12px; color: #786E64; font-style: italic; }
+  h2 { font-family: Georgia, serif; font-size: 22px; font-weight: 400; letter-spacing: 1px; margin-bottom: 16px; margin-top: 16px; }
+  .rec-table td:first-child { font-weight: 500; width: 180px; }
+  .rec-table .priority-high { background: rgba(74, 124, 89, 0.08); }
+  .rec-table .priority-med { background: rgba(212, 196, 176, 0.2); }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; }
+  .tag-high { background: #4A7C59; color: #fff; }
+  .tag-med { background: #D4C4B0; color: #1A1C1E; }
+  .tag-low { background: #E8DFD3; color: #786E64; }
+</style>
+</head>
+<body>
+
+<h1>Current vCard Fields</h1>
+<p class="subtitle">How each field renders on iOS (Apple Contacts) vs Android (Google Contacts)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:200px;">Field</th>
+      <th>Value</th>
+      <th style="width:220px;">iOS</th>
+      <th style="width:220px;">Android</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="field-name">N / FN</td>
+      <td class="value">Nitin Solanki</td>
+      <td class="check">&#10003; Full name at top</td>
+      <td class="check">&#10003; Full name at top</td>
+    </tr>
+    <tr>
+      <td class="field-name">NICKNAME</td>
+      <td class="value">Nico</td>
+      <td class="check">&#10003; Shows under name</td>
+      <td class="check">&#10003; Shows as "Nickname"</td>
+    </tr>
+    <tr>
+      <td class="field-name">X-PHONETIC-FIRST/LAST</td>
+      <td class="value">Nee-tin So-lahn-kee</td>
+      <td class="check">&#10003; Used by Siri for pronunciation</td>
+      <td class="x">&#10007; Ignored by most Android devices</td>
+    </tr>
+    <tr>
+      <td class="field-name">ORG</td>
+      <td class="value">Solanki Co</td>
+      <td class="check">&#10003; Shows under name</td>
+      <td class="check">&#10003; Shows as "Company"</td>
+    </tr>
+    <tr>
+      <td class="field-name">TITLE</td>
+      <td class="value">Founder</td>
+      <td class="check">&#10003; Shows under company</td>
+      <td class="check">&#10003; Shows as "Title"</td>
+    </tr>
+    <tr>
+      <td class="field-name">TEL (CELL, pref)</td>
+      <td class="value">+1.404.944.7070</td>
+      <td class="check">&#10003; "mobile" — primary</td>
+      <td class="check">&#10003; "Mobile" — default for calls</td>
+    </tr>
+    <tr>
+      <td class="field-name">TEL (WORK)</td>
+      <td class="value">+1.561.865.6426</td>
+      <td class="check">&#10003; "work"</td>
+      <td class="check">&#10003; "Work"</td>
+    </tr>
+    <tr>
+      <td class="field-name">TEL (HOME)</td>
+      <td class="value">+1.305.894.6426</td>
+      <td class="check">&#10003; "home"</td>
+      <td class="check">&#10003; "Home"</td>
+    </tr>
+    <tr>
+      <td class="field-name">EMAIL (WORK, pref)</td>
+      <td class="value">nitin@solanki.co</td>
+      <td class="check">&#10003; "work" — primary</td>
+      <td class="check">&#10003; "Work" — default for email</td>
+    </tr>
+    <tr>
+      <td class="field-name">EMAIL (HOME)</td>
+      <td class="value">nitin@nitinsolanki.com</td>
+      <td class="check">&#10003; "home"</td>
+      <td class="check">&#10003; "Home"</td>
+    </tr>
+    <tr>
+      <td class="field-name">URL (unlabeled)</td>
+      <td class="value">solanki.co<br>solanki.co/card<br>nitinsolanki.com</td>
+      <td class="check">&#10003; Shows as "homepage" links</td>
+      <td class="check">&#10003; Shows as "Website" links</td>
+    </tr>
+    <tr>
+      <td class="field-name">URL (LinkedIn, labeled)</td>
+      <td class="value">linkedin.com/in/nitinsolanki</td>
+      <td class="check">&#10003; Shows with "LinkedIn" label</td>
+      <td class="x">&#10007; Label may not display — shows as generic URL</td>
+    </tr>
+    <tr>
+      <td class="field-name">X-SOCIALPROFILE (instagram)</td>
+      <td class="value">instagram.com/solanki.co</td>
+      <td class="check">&#10003; Shows with Instagram icon</td>
+      <td class="x">&#10007; Not supported — ignored</td>
+    </tr>
+    <tr>
+      <td class="field-name">X-SOCIALPROFILE (twitter)</td>
+      <td class="value">x.com/solanki</td>
+      <td class="check">&#10003; Shows with Twitter/X icon</td>
+      <td class="x">&#10007; Not supported — ignored</td>
+    </tr>
+    <tr>
+      <td class="field-name">X-SOCIALPROFILE (linkedin)</td>
+      <td class="value">linkedin.com/in/nitinsolanki</td>
+      <td class="check">&#10003; Shows with LinkedIn icon</td>
+      <td class="x">&#10007; Not supported — ignored</td>
+    </tr>
+    <tr>
+      <td class="field-name">PHOTO</td>
+      <td class="value">Embedded JPEG</td>
+      <td class="check">&#10003; Contact photo + Caller ID</td>
+      <td class="check">&#10003; Contact photo (may resize)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Recommended Additional Fields</h2>
+<p class="subtitle">Fields worth adding to make the vCard more complete</p>
+
+<table class="rec-table">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>What It Does</th>
+      <th style="width:100px;">iOS</th>
+      <th style="width:100px;">Android</th>
+      <th style="width:90px;">Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="priority-high">
+      <td>ADR;TYPE=WORK</td>
+      <td>Business address — shows on map, enables navigation from contact card</td>
+      <td class="check">&#10003; Maps link</td>
+      <td class="check">&#10003; Maps link</td>
+      <td><span class="tag tag-high">High</span></td>
+    </tr>
+    <tr class="priority-high">
+      <td>NOTE</td>
+      <td>Brief bio or context line — visible when viewing the contact. Good for "Founder of Solanki Co — Family holding company"</td>
+      <td class="check">&#10003; Shows in Notes</td>
+      <td class="check">&#10003; Shows in Notes</td>
+      <td><span class="tag tag-high">High</span></td>
+    </tr>
+    <tr class="priority-med">
+      <td>BDAY</td>
+      <td>Birthday — triggers annual reminders on both platforms</td>
+      <td class="check">&#10003; Calendar alert</td>
+      <td class="check">&#10003; Calendar alert</td>
+      <td><span class="tag tag-med">Medium</span></td>
+    </tr>
+    <tr class="priority-med">
+      <td>X-ABDATE (Anniversary)</td>
+      <td>Custom date field — can label as "Anniversary" or any custom date</td>
+      <td class="check">&#10003; Custom label</td>
+      <td class="x">&#10007; Ignored</td>
+      <td><span class="tag tag-low">Low</span></td>
+    </tr>
+    <tr class="priority-med">
+      <td>X-ABRELATEDNAMES</td>
+      <td>Related people — "assistant", "spouse", "partner"</td>
+      <td class="check">&#10003; "Related People"</td>
+      <td class="check">&#10003; "Relations"</td>
+      <td><span class="tag tag-low">Low</span></td>
+    </tr>
+    <tr class="priority-med">
+      <td>GEO</td>
+      <td>Latitude/longitude — enables location-based features</td>
+      <td class="x">&#10007; Not shown</td>
+      <td class="x">&#10007; Not shown</td>
+      <td><span class="tag tag-low">Low</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size: 13px; color: #786E64; max-width: 700px; margin-top: 16px;">
+  <strong>Key takeaway:</strong> iOS supports richer contact features (social profiles, custom labels, phonetic names). Android ignores most Apple-specific extensions but handles the core fields well. The three unlabeled URLs should ideally get <code>X-ABLabel</code> tags so iOS can show descriptive labels like "Website", "Digital Card", and "Personal Site" instead of generic "homepage" entries.
+</p>
+
+</body>
+</html>
