@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solanki Travel – Tailor-Made Private Journeys | Solanki Co</title>
-    <meta name="description" content="Tailor-made travel and experiences. Founder-led curation built on taste, discretion, and trusted partnerships.">
-    <meta property="og:title" content="Solanki Private Travel – Tailor-Made Experiences">
-    <meta property="og:description" content="Tailor-made travel and experiences. Founder-led curation built on taste, discretion, and trusted partnerships.">
+    <title>Private Inquiry – Solanki Private Travel | Solanki Co</title>
+    <meta name="description" content="Begin your private travel journey. Share your vision with Solanki and we'll shape the rest.">
+    <meta property="og:title" content="Private Inquiry – Solanki Private Travel">
+    <meta property="og:description" content="Begin your private travel journey. Share your vision with Solanki and we'll shape the rest.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://solanki.co/travel.html">
-    <link rel="canonical" href="https://solanki.co/travel.html">
+    <meta property="og:url" content="https://solanki.co/travel-inquiry.html">
+    <link rel="canonical" href="https://solanki.co/travel-inquiry.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@solanki">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23E2DBD6'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='300' fill='%231A1C1E' letter-spacing='2'%3ES%3C/text%3E%3C/svg%3E">
@@ -227,30 +227,37 @@
         .pillar-section p { font-size: 1rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1.5rem; }
         .pillar-section p:last-child { margin-bottom: 0; }
 
-        .pillar-areas { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
-        .pillar-area { padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); }
-        .pillar-area h3 { font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--text); }
-        .pillar-area p { font-size: 0.92rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 0; }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @keyframes heroFade { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        .pull-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--text); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 2rem; }
+        /* Form Styling */
+        .form-section { padding: 60px 2rem; }
+        .form-container { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 2.5rem; }
+        .form-label { font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); display: block; margin-bottom: 0.75rem; }
+        .form-input, .form-select, .form-textarea { width: 100%; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 300; color: var(--text); background: transparent; border: none; border-bottom: 1px solid var(--accent); padding: 12px 0; transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-bottom-color: var(--text); }
+        .form-input::placeholder { color: rgba(120, 110, 100, 0.6); }
+        .form-textarea { resize: vertical; min-height: 120px; font-family: 'Inter', sans-serif; }
 
-        /* Pathway Cards */
-        .pathway-section { padding: 0 2rem; }
-        .pathway-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-        .pathway-card { display: block; padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); text-decoration: none; color: var(--text); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .pathway-card:hover { border-color: var(--accent); background: rgba(252, 250, 247, 0.6); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
-        .pathway-card .pathway-icon { width: 40px; height: 40px; margin-bottom: 1.25rem; color: var(--text-mid); }
-        .pathway-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
-        .pathway-card p { font-size: 0.88rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1rem; }
-        .pathway-link { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+        .form-select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%23787866" stroke-width="1.5" d="M4 6l4 4 4-4"/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+            padding-right: 24px;
+        }
 
-        .cta-section { text-align: center; padding: 80px 2rem; }
-        .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
-        .cta-section p { font-size: 1rem; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
-        .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .cta-btn:hover { background: var(--text); color: var(--bg); }
+        .form-submit { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); background: transparent; border: 1px solid var(--text); padding: 14px 32px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); margin-top: 1.5rem; }
+        .form-submit:hover { background: var(--text); color: var(--bg); }
 
-        @media (min-width: 768px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
+        .form-note { font-size: 0.75rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; margin-top: 1.5rem; text-align: center; }
+
+        .confirmation-message { display: none; text-align: center; padding: 2rem; background: var(--bg-card); border: 1px solid rgba(212, 196, 176, 0.3); margin-top: 2rem; }
+        .confirmation-message.show { display: block; }
+        .confirmation-message h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .confirmation-message p { font-size: 0.95rem; color: var(--text-mid); }
 
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .back-link:hover { color: var(--accent); border-color: var(--accent); }
@@ -261,10 +268,8 @@
         .footer-mark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 300; color: var(--text); width: 32px; height: 32px; background: var(--bg-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; letter-spacing: 1px; }
         .footer-divider { width: 1px; height: 24px; background: var(--accent); }
         .footer-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
-        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px;
-            padding-right: 3px; color: var(--text); }
-        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px;
-            padding-right: 1.5px; margin-top: 3px; }
+        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px; padding-right: 3px; color: var(--text); }
+        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; padding-right: 1.5px; margin-top: 3px; }
         .footer-rule { width: 48px; height: 2px; background: var(--text); margin: 0 auto 1.5rem; }
         .footer-copy { font-size: 0.75rem; color: var(--text-mid); letter-spacing: 0.5px; margin-bottom: 1.25rem; font-weight: 300; }
         .footer-socials { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
@@ -275,10 +280,6 @@
         .footer-links { display: flex; justify-content: center; gap: 2rem; }
         .footer-links a { font-size: 0.72rem; color: var(--text-mid); text-decoration: none; letter-spacing: 0.5px; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .footer-links a:hover { color: var(--text); }
-
-        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        @keyframes heroFade { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Mobile line-height bump */
         @media (max-width: 767px) {
@@ -298,7 +299,6 @@
                 padding: 11px 20px;
             }
             .pillar-section { padding: 120px 3rem; }
-            .pillar-areas { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (min-width: 1024px) {
@@ -307,8 +307,7 @@
                 grid-template-columns: auto 1fr auto;
                 gap: 20px;
             }
-            .logo-name { font-size: 1.3rem; letter-spacing: 3px;
-            padding-right: 3px; }
+            .logo-name { font-size: 1.3rem; letter-spacing: 3px; padding-right: 3px; }
             .nav-desktop {
                 display: flex;
                 justify-self: end;
@@ -323,7 +322,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <div class="hamburger-lines">
@@ -352,7 +350,7 @@
             <a href="advisory.html">Advisory</a>
             <a href="digital.html">Digital</a>
             <a href="studios.html">Studios</a>
-            <a href="travel.html" class="active">Travel</a>
+            <a href="travel.html">Travel</a>
             <a href="connect.html" class="connect-btn">Connect</a>
         </nav>
     </header>
@@ -374,103 +372,104 @@
                 <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
                 <div class="pillar-lockup">
                     <div class="lockup-parent">SOLANKI</div>
-                    <div class="lockup-entity">PRIVATE TRAVEL</div>
+                    <div class="lockup-entity">PRIVATE INQUIRY</div>
                 </div>
-                <p class="pillar-subtitle">Curated, founder-led travel for a small circle. By request only.</p>
+                <p class="pillar-subtitle">Every journey begins with a conversation. Share your vision — we'll shape the rest.</p>
                 <div class="divider-center"></div>
             </div>
         </section>
 
         <section class="pillar-section alt">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">THE PHILOSOPHY</div>
-                <div class="line-accent"></div>
-                <h2>Travel as an Art of Living</h2>
-                <p>The most meaningful journeys are not found in a catalog. They are assembled — piece by piece, relationship by relationship — by someone who understands not just where you want to go, but why.</p>
-                <p>Solanki Private Travel works with a deliberately small number of clients. Every itinerary reflects personal taste and deep partner relationships built over years — not algorithms, not volume. That selectivity is the point.</p>
+                <p>This is not a booking form. It's an invitation to share your travel dreams with someone who listens before planning. We believe meaningful journeys are conversations, not transactions. Tell us where you want to go, how you want to feel, and what matters most to you. We'll take it from there.</p>
             </div>
         </section>
 
-        <div class="pull-quote fade-in">
-            "The best journeys are not planned. They are curated."
-        </div>
+        <section class="form-section fade-in">
+            <div class="form-container">
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
 
-        <section class="pillar-section">
-            <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">WHAT WE OFFER</div>
-                <div class="line-accent"></div>
-                <h2>Journeys Designed Around You</h2>
-                <p>Each engagement begins with a conversation — not a form. We listen before we plan, and we curate before we book. The result is travel that feels personal because it is.</p>
-            </div>
-            <div class="container">
-                <div class="pillar-areas fade-in">
-                    <div class="pillar-area">
-                        <h3>Bespoke Itineraries</h3>
-                        <p>Fully custom travel planning for individuals, couples, and families. From hotel selection and dining reservations to private guides and seamless transfers — every detail considered.</p>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
                     </div>
-                    <div class="pillar-area">
-                        <h3>Curated Experiences</h3>
-                        <p>Access to experiences that do not appear on any website — private viewings, chef tables, cultural immersions, and encounters that transform a trip into a memory.</p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
                     </div>
-                    <div class="pillar-area">
-                        <h3>Group &amp; Event Travel</h3>
-                        <p>Milestone celebrations, retreats, and intimate group journeys designed with the same attention as a solo itinerary. Logistics handled invisibly so every guest simply arrives and enjoys.</p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="journeyType">Journey Type</label>
+                        <select id="journeyType" name="journeyType" class="form-select">
+                            <option value="">Select a journey type</option>
+                            <option value="solo">Solo Travel</option>
+                            <option value="couple">Couple's Journey</option>
+                            <option value="family">Family Travel</option>
+                            <option value="group">Group Retreat</option>
+                            <option value="event">Event or Celebration</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                    <div class="pillar-area">
-                        <h3>Preferred Access</h3>
-                        <p>Relationships with the world's finest hotels, resorts, and experience partners mean preferred rates, room upgrades, amenity credits, and priority availability — benefits that come from trust, not volume.</p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="destinations">Destinations or Regions</label>
+                        <input type="text" id="destinations" name="destinations" class="form-input" placeholder="e.g., Italy, Japan, Patagonia">
                     </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="travelDates">Preferred Travel Dates</label>
+                        <input type="text" id="travelDates" name="travelDates" class="form-input" placeholder="e.g., Spring 2026, Summer">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="travelers">Number of Travelers</label>
+                        <select id="travelers" name="travelers" class="form-select">
+                            <option value="">Select number</option>
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5">5+ people</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Tell Us Your Vision</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Share what matters to you. What kind of experience are you seeking? What have you dreamed about?" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="referral">How Did You Hear About Us?</label>
+                        <select id="referral" name="referral" class="form-select">
+                            <option value="">Select an option</option>
+                            <option value="personal-referral">Personal Referral</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="website">Website</option>
+                            <option value="news">News or Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="form-submit">Send Inquiry</button>
+                        <p class="form-note">We hold all conversations in confidence. Your information will never be shared.</p>
+                    </div>
+                </form>
+
+                <div id="confirmationMessage" class="confirmation-message">
+                    <h3>Thank You</h3>
+                    <p>Your inquiry has been received. We'll be in touch within 48 hours to begin your conversation.</p>
                 </div>
             </div>
         </section>
 
-        <section class="pillar-section alt">
-            <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">THE DIFFERENCE</div>
-                <div class="line-accent"></div>
-                <h2>Taste, Not Scale</h2>
-                <p>This is not a travel agency. There are no bookings to process, no catalog to browse. Solanki Private Travel is a personal practice — selective by design, intimate by nature. We serve a small circle because that is the only way to deliver the depth of curation and care that defines this work.</p>
-                <p>Our partner relationships are built on mutual respect and repeat trust. When we call a hotel, they know exactly who is arriving and what matters to them. That level of care cannot be automated — and we have no interest in trying.</p>
-            </div>
-        </section>
-
-        <section class="pathway-section fade-in" style="padding-top: 20px; padding-bottom: 0;">
-            <div class="pathway-grid">
-                <a href="travel-destinations.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <circle cx="20" cy="20" r="16"/><path d="M4 20h32M20 4c-4 4-6.5 10-6.5 16s2.5 12 6.5 16c4-4 6.5-10 6.5-16S24 8 20 4z"/>
-                    </svg>
-                    <h3>Destinations</h3>
-                    <p>Curated regions — from the Italian coast to the temples of Japan. Each chosen for depth, not trend.</p>
-                    <span class="pathway-link">Explore Destinations &rarr;</span>
-                </a>
-                <a href="travel-experiences.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M8 32l6-10 5 6 6-14 7 18"/><rect x="4" y="4" width="32" height="28" rx="2"/>
-                    </svg>
-                    <h3>Experiences</h3>
-                    <p>Private dining, cultural immersions, wellness retreats, and moments that don't appear on any itinerary.</p>
-                    <span class="pathway-link">View Experiences &rarr;</span>
-                </a>
-                <a href="travel-inquiry.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M6 10h28v20H6z"/><path d="M6 10l14 12L34 10"/>
-                    </svg>
-                    <h3>Begin a Conversation</h3>
-                    <p>Every journey starts with a conversation. Share your vision — we'll shape the rest.</p>
-                    <span class="pathway-link">Private Inquiry &rarr;</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="cta-section fade-in">
-            <h2>Your Journey Begins Here</h2>
-            <p>Tell us where you want to go and how you want to feel when you get there. We'll handle the rest.</p>
-            <a href="travel-inquiry.html" class="cta-btn">Start a Conversation</a>
-        </section>
-
         <div class="back-section fade-in">
-            <a href="index.html" class="back-link"><span>&larr;</span> Back to Ecosystem</a>
+            <a href="travel.html" class="back-link"><span>&larr;</span> Back to Travel</a>
         </div>
 
     </main>
@@ -527,6 +526,18 @@
             }
         });
 
+        // Form submission
+        const form = document.getElementById('inquiryForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            confirmationMessage.classList.add('show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fade-in animation
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
