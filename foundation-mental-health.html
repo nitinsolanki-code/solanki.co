@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Solanki Foundation – Purpose-Driven Impact | Solanki Co</title>
-    <meta name="description" content="The Solanki Foundation directs resources toward causes where cultural understanding, sustained commitment, and quiet discipline can create meaningful change.">
-    <meta property="og:title" content="The Solanki Foundation – Purpose-Driven Impact">
-    <meta property="og:description" content="The Solanki Foundation directs resources toward causes where cultural understanding, sustained commitment, and quiet discipline can create meaningful change.">
+    <title>South Asian Wellness | The Solanki Foundation</title>
+    <meta name="description" content="Our inaugural initiative: expanding access to culturally competent mental health resources, community support, and pathways to healing for the South Asian community.">
+    <meta property="og:title" content="South Asian Wellness | The Solanki Foundation">
+    <meta property="og:description" content="Our inaugural initiative: expanding access to culturally competent mental health resources, community support, and pathways to healing for the South Asian community.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://solanki.co/foundation.html">
-    <link rel="canonical" href="https://solanki.co/foundation.html">
+    <meta property="og:url" content="https://solanki.co/foundation-mental-health.html">
+    <link rel="canonical" href="https://solanki.co/foundation-mental-health.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@solanki">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23E2DBD6'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='300' fill='%231A1C1E' letter-spacing='2'%3ES%3C/text%3E%3C/svg%3E">
@@ -95,9 +95,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .hamburger-lines span:first-child {
-            margin-bottom: 5px;
-        }
+        .hamburger-lines span:first-child { margin-bottom: 5px; }
 
         .hamburger-label {
             font-family: 'Inter', sans-serif;
@@ -109,17 +107,9 @@
             display: none;
         }
 
-        .hamburger.active .hamburger-lines span:first-child {
-            transform: rotate(45deg) translate(2px, 2px);
-        }
-
-        .hamburger.active .hamburger-lines span:last-child {
-            transform: rotate(-45deg) translate(2px, -2px);
-        }
-
-        .hamburger.active .hamburger-label {
-            visibility: hidden;
-        }
+        .hamburger.active .hamburger-lines span:first-child { transform: rotate(45deg) translate(2px, 2px); }
+        .hamburger.active .hamburger-lines span:last-child { transform: rotate(-45deg) translate(2px, -2px); }
+        .hamburger.active .hamburger-label { visibility: hidden; }
 
         .header-logo {
             text-decoration: none;
@@ -144,18 +134,9 @@
             letter-spacing: 1px;
         }
 
-        .logo-divider {
-            width: 1px;
-            height: 28px;
-            background: var(--accent);
-        }
+        .logo-divider { width: 1px; height: 28px; background: var(--accent); }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1;
-        }
+        .logo-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
 
         .logo-name {
             font-family: 'Cormorant Garamond', Georgia, serif;
@@ -176,11 +157,7 @@
             margin-top: 3px;
         }
 
-        .nav-desktop {
-            display: none;
-            align-items: center;
-            gap: 40px;
-        }
+        .nav-desktop { display: none; align-items: center; gap: 40px; }
 
         .nav-desktop a {
             font-size: 0.625rem;
@@ -194,10 +171,7 @@
 
         .nav-desktop a:hover { opacity: 0.5; }
 
-        .header-right {
-            display: flex;
-            justify-content: flex-end;
-        }
+        .header-right { display: flex; justify-content: flex-end; }
 
         .connect-btn {
             display: inline-flex;
@@ -218,13 +192,9 @@
             transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .connect-btn:hover {
-            background: var(--accent);
-            color: var(--text);
-        }
+        .connect-btn:hover { background: var(--accent); color: var(--text); }
 
-        /* Mobile Nav Overlay */
-        /* Mobile Nav — Left-Slide Panel (Janu pattern) */
+        /* Mobile Nav */
         .mobile-nav {
             position: fixed;
             top: 0; left: 0; bottom: 0;
@@ -242,10 +212,7 @@
             box-shadow: 4px 0 24px rgba(0, 0, 0, 0);
         }
 
-        .mobile-nav.active {
-            transform: translateX(0);
-            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
-        }
+        .mobile-nav.active { transform: translateX(0); box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08); }
 
         .mobile-nav-label {
             font-family: 'Inter', sans-serif;
@@ -270,7 +237,6 @@
 
         .mobile-nav a:hover { opacity: 0.5; }
 
-        /* Backdrop overlay */
         .nav-backdrop {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -281,10 +247,7 @@
             transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .nav-backdrop.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        .nav-backdrop.active { opacity: 1; pointer-events: auto; }
 
         /* ============================================
            MAIN CONTENT
@@ -303,19 +266,9 @@
             margin-bottom: 1.25rem;
         }
 
-        .line-accent {
-            width: 48px;
-            height: 2px;
-            background: var(--text);
-            margin-bottom: 1.5rem;
-        }
+        .line-accent { width: 48px; height: 2px; background: var(--text); margin-bottom: 1.5rem; }
 
-        .divider-center {
-            width: 48px;
-            height: 2px;
-            background: var(--text);
-            margin: 2rem auto;
-        }
+        .divider-center { width: 48px; height: 2px; background: var(--text); margin: 2rem auto; }
 
         /* ============================================
            PILLAR HERO
@@ -334,9 +287,7 @@
             animation: heroFade 1.2s ease 0.3s backwards;
         }
 
-        .pillar-lockup {
-            margin-bottom: 2rem;
-        }
+        .pillar-lockup { margin-bottom: 2rem; }
 
         .pillar-lockup .lockup-parent {
             font-family: 'Inter', sans-serif;
@@ -350,9 +301,9 @@
 
         .pillar-lockup .lockup-entity {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 300;
-            letter-spacing: clamp(6px, 1.5vw, 14px);
+            letter-spacing: clamp(4px, 1vw, 8px);
             color: var(--text);
             line-height: 1.15;
         }
@@ -369,18 +320,10 @@
         /* ============================================
            CONTENT SECTIONS
         ============================================ */
-        .pillar-section {
-            padding: 100px 2rem;
-        }
+        .pillar-section { padding: 100px 2rem; }
+        .pillar-section.alt { background: var(--bg-card); }
 
-        .pillar-section.alt {
-            background: var(--bg-card);
-        }
-
-        .pillar-section-inner {
-            max-width: 720px;
-            margin: 0 auto;
-        }
+        .pillar-section-inner { max-width: 720px; margin: 0 auto; }
 
         .pillar-section h2 {
             font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -396,11 +339,9 @@
             margin-bottom: 1.5rem;
         }
 
-        .pillar-section p:last-child {
-            margin-bottom: 0;
-        }
+        .pillar-section p:last-child { margin-bottom: 0; }
 
-        /* Pillars list (for areas of focus etc.) */
+        /* Pillar cards */
         .pillar-areas {
             display: grid;
             grid-template-columns: 1fr;
@@ -414,12 +355,7 @@
             border: 1px solid rgba(212, 196, 176, 0.5);
         }
 
-        .pillar-area h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
+        .pillar-area h3 { font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--text); }
 
         .pillar-area p {
             font-size: 0.92rem;
@@ -428,6 +364,38 @@
             font-weight: 300;
             margin-bottom: 0;
         }
+
+        /* Need blurbs — two-column */
+        .need-blurbs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .need-blurb {
+            padding: 2.5rem;
+            background: var(--white);
+            border: 1px solid rgba(212, 196, 176, 0.5);
+        }
+
+        .need-blurb h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .need-blurb p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 0.75rem;
+        }
+
+        .need-blurb p:last-child { margin-bottom: 0; }
 
         /* Pull quote */
         .pull-quote {
@@ -443,43 +411,6 @@
             padding: 80px 2rem;
         }
 
-        /* Founder note */
-        .founder-note {
-            max-width: 720px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--accent);
-        }
-
-        .founder-note p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-mid);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .founder-note p:last-of-type {
-            margin-bottom: 1.5rem;
-        }
-
-        .founder-attribution {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--text);
-        }
-
-        .founder-attribution span {
-            display: block;
-            font-weight: 300;
-            color: var(--text-mid);
-            margin-top: 2px;
-            letter-spacing: 0.5px;
-        }
-
         /* Stats row */
         .stats-row {
             display: grid;
@@ -491,9 +422,7 @@
             text-align: center;
         }
 
-        .stat-item {
-            padding: 1.5rem 1rem;
-        }
+        .stat-item { padding: 1.5rem 1rem; }
 
         .stat-number {
             font-family: 'Cormorant Garamond', Georgia, serif;
@@ -513,25 +442,39 @@
             line-height: 1.5;
         }
 
-        /* Partners grid */
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+        /* Founder note */
+        .founder-note {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--accent);
         }
 
-        .partner-placeholder {
-            height: 80px;
-            border: 1px dashed rgba(212, 196, 176, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .founder-note p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-mid);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-note p:last-of-type { margin-bottom: 1.5rem; }
+
+        .founder-attribution {
             font-family: 'Inter', sans-serif;
-            font-size: 0.72rem;
-            color: var(--accent);
-            letter-spacing: 1px;
+            font-size: 0.75rem;
             font-weight: 400;
+            letter-spacing: 1px;
+            color: var(--text);
+        }
+
+        .founder-attribution span {
+            display: block;
+            font-weight: 300;
+            color: var(--text-mid);
+            margin-top: 2px;
+            letter-spacing: 0.5px;
         }
 
         /* CTA section */
@@ -541,14 +484,9 @@
             text-align: center;
         }
 
-        .cta-section .eyebrow {
-            color: var(--accent);
-        }
+        .cta-section .eyebrow { color: var(--accent); }
 
-        .cta-section .line-accent {
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .cta-section .line-accent { margin-left: auto; margin-right: auto; }
 
         .cta-section h2 {
             font-family: 'Cormorant Garamond', Georgia, serif;
@@ -589,95 +527,6 @@
             border-color: var(--bg);
         }
 
-        /* Dual Pathway Cards */
-        .pathway-section {
-            padding: 0 2rem 80px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .pathway-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .pathway-card {
-            display: block;
-            padding: 2.5rem 2rem;
-            background: var(--white);
-            border: 1px solid rgba(212, 196, 176, 0.5);
-            text-decoration: none;
-            color: var(--text);
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .pathway-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(26, 28, 30, 0.06);
-            border-color: var(--accent);
-        }
-
-        .pathway-icon {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1.5rem;
-            color: var(--text-mid);
-        }
-
-        .pathway-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pathway-card h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
-        }
-
-        .pathway-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-mid);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pathway-link {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--text);
-            border-bottom: 1px solid var(--text);
-            padding-bottom: 2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .pathway-card:hover .pathway-link {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .partner-inline-link {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--text-mid);
-            text-decoration: none;
-            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .partner-inline-link:hover { color: var(--text); }
-
         .cta-buttons {
             display: flex;
             flex-direction: column;
@@ -702,15 +551,9 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .back-link:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
+        .back-link:hover { color: var(--accent); border-color: var(--accent); }
 
-        .back-section {
-            text-align: center;
-            padding: 60px 2rem 80px;
-        }
+        .back-section { text-align: center; padding: 60px 2rem 80px; }
 
         /* ============================================
            FOOTER
@@ -745,77 +588,37 @@
             letter-spacing: 1px;
         }
 
-        .footer-divider {
-            width: 1px;
-            height: 24px;
-            background: var(--accent);
-        }
+        .footer-divider { width: 1px; height: 24px; background: var(--accent); }
 
         .footer-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
-        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px;
-            padding-right: 3px; color: var(--text); }
-        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px;
-            padding-right: 1.5px; margin-top: 3px; }
+        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px; padding-right: 3px; color: var(--text); }
+        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; padding-right: 1.5px; margin-top: 3px; }
 
-        .footer-rule {
-            width: 48px;
-            height: 2px;
-            background: var(--text);
-            margin: 0 auto 1.5rem;
-        }
+        .footer-rule { width: 48px; height: 2px; background: var(--text); margin: 0 auto 1.5rem; }
 
-        .footer-copy {
-            font-size: 0.75rem;
-            color: var(--text-mid);
-            letter-spacing: 0.5px;
-            margin-bottom: 1.25rem;
-            font-weight: 300;
-        }
+        .footer-copy { font-size: 0.75rem; color: var(--text-mid); letter-spacing: 0.5px; margin-bottom: 1.25rem; font-weight: 300; }
 
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
+        .footer-socials { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
 
         .footer-socials a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px;
             border: 1px solid rgba(212, 196, 176, 0.5);
             border-radius: 50%;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .footer-socials a:hover {
-            border-color: var(--accent);
-            background: rgba(237, 232, 227, 0.4);
-        }
+        .footer-socials a:hover { border-color: var(--accent); background: rgba(237, 232, 227, 0.4); }
 
-        .footer-socials a svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--text-mid);
-            transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        .footer-socials a svg { width: 14px; height: 14px; fill: var(--text-mid); transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
         .footer-socials a:hover svg { fill: var(--text); }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; }
 
         .footer-links a {
-            font-size: 0.72rem;
-            color: var(--text-mid);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.72rem; color: var(--text-mid); text-decoration: none;
+            letter-spacing: 0.5px; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .footer-links a:hover { color: var(--text); }
@@ -829,10 +632,7 @@
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         @keyframes heroFade {
             from { opacity: 0; transform: translateY(40px); }
@@ -842,47 +642,27 @@
         /* ============================================
            RESPONSIVE
         ============================================ */
-        /* Mobile line-height bump */
         @media (max-width: 767px) {
             body { line-height: 1.7; }
+            .need-blurbs { grid-template-columns: 1fr; }
         }
 
         @media (min-width: 768px) {
-            header {
-                padding: 20px 40px;
-                grid-template-columns: auto 1fr auto;
-                gap: 20px;
-            }
+            header { padding: 20px 40px; grid-template-columns: auto 1fr auto; gap: 20px; }
             .hamburger-label { display: block; }
             .logo-name { font-size: 1.2rem; }
-            .connect-btn {
-                font-size: 0.65rem;
-                padding: 11px 20px;
-            }
+            .connect-btn { font-size: 0.65rem; padding: 11px 20px; }
             .pillar-section { padding: 120px 3rem; }
             .pillar-areas { grid-template-columns: repeat(2, 1fr); }
             .stats-row { grid-template-columns: repeat(3, 1fr); }
-            .partners-grid { grid-template-columns: repeat(4, 1fr); }
-            .pathway-grid { grid-template-columns: repeat(2, 1fr); }
             .cta-buttons { flex-direction: row; gap: 1.5rem; }
         }
 
         @media (min-width: 1024px) {
-            header {
-                padding: 22px 60px;
-                grid-template-columns: auto 1fr auto;
-                gap: 20px;
-            }
-            .logo-name { font-size: 1.3rem; letter-spacing: 3px;
-            padding-right: 3px; }
-            .nav-desktop {
-                display: flex;
-                justify-self: end;
-            }
-            .nav-desktop .connect-btn {
-                font-size: 0.7rem;
-                padding: 12px 28px;
-            }
+            header { padding: 22px 60px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .logo-name { font-size: 1.3rem; letter-spacing: 3px; padding-right: 3px; }
+            .nav-desktop { display: flex; justify-self: end; }
+            .nav-desktop .connect-btn { font-size: 0.7rem; padding: 12px 28px; }
             .header-right { display: none; }
             .hamburger-lines { width: 22px; }
         }
@@ -890,21 +670,19 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "NGO",
-        "name": "The Solanki Foundation",
-        "url": "https://solanki.co/foundation.html",
-        "description": "The Solanki Foundation directs resources toward causes where cultural understanding, sustained commitment, and quiet discipline can create meaningful change.",
-        "founder": {
-            "@type": "Person",
-            "name": "Nitin Solanki"
-        },
-        "parentOrganization": {
-            "@type": "Organization",
+        "@type": "WebPage",
+        "name": "South Asian Wellness — The Solanki Foundation",
+        "url": "https://solanki.co/foundation-mental-health.html",
+        "description": "Our inaugural initiative: expanding access to culturally competent mental health resources, community support, and pathways to healing for the South Asian community.",
+        "isPartOf": {
+            "@type": "WebSite",
             "name": "Solanki Co",
             "url": "https://solanki.co"
         },
-        "areaServed": "United States",
-        "knowsAbout": ["mental health", "South Asian community", "domestic violence resources", "cultural competency", "mental health stigma"]
+        "about": {
+            "@type": "Thing",
+            "name": "Wellness and healing resources for the South Asian community"
+        }
     }
     </script>
 </head>
@@ -934,7 +712,7 @@
         </div>
 
         <nav class="nav-desktop">
-            <a href="foundation.html" class="active">Foundation</a>
+            <a href="foundation.html">Foundation</a>
             <a href="capital.html">Capital</a>
             <a href="advisory.html">Advisory</a>
             <a href="digital.html">Digital</a>
@@ -947,7 +725,7 @@
     <!-- Nav Backdrop -->
     <div class="nav-backdrop" id="navBackdrop"></div>
 
-    <!-- Mobile Nav — Left-Slide Panel -->
+    <!-- Mobile Nav -->
     <nav class="mobile-nav" id="mobileNav">
         <span class="mobile-nav-label">Main Menu</span>
         <a href="foundation.html">Foundation</a>
@@ -963,98 +741,114 @@
         <!-- ========== PILLAR HERO ========== -->
         <section class="pillar-hero">
             <div class="pillar-hero-content">
-                <div class="eyebrow">Foundation</div>
+                <div class="eyebrow">The Solanki Foundation &middot; Inaugural Initiative</div>
                 <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
                 <div class="pillar-lockup">
-                    <div class="lockup-parent">THE SOLANKI</div>
-                    <div class="lockup-entity">FOUNDATION</div>
+                    <div class="lockup-parent">SOUTH ASIAN</div>
+                    <div class="lockup-entity">WELLNESS</div>
                 </div>
-                <p class="pillar-subtitle">Directing resources toward causes where cultural understanding, sustained commitment, and quiet discipline can create meaningful change.</p>
+                <p class="pillar-subtitle">Because healing deserves dignity. Expanding access to culturally competent mental health resources, community support, and pathways to healing for South Asian men and women.</p>
                 <div class="divider-center"></div>
             </div>
         </section>
 
-        <!-- ========== OUR BELIEF ========== -->
+        <!-- ========== THE PROBLEM ========== -->
         <section class="pillar-section alt">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">OUR BELIEF</div>
+                <div class="eyebrow">THE NEED</div>
                 <div class="line-accent"></div>
-                <h2>Impact Through Discipline, Not Scale</h2>
-                <p>The Solanki Foundation is not built around volume. It is built around conviction. We choose causes where we believe sustained, culturally informed commitment can make a disproportionate difference — and we stay with them long enough to matter.</p>
-                <p>We partner with established organizations already embedded in the communities they serve. Our role is to fund, connect, and amplify — deploying every dollar with the same discipline we bring to the rest of Solanki Co. Clear outcomes. Transparent reporting. A long-term view.</p>
+                <h2>Silence Is Not Strength</h2>
+                <p>Mental health stigma runs deep across the South Asian community — a cultural silence that touches every household, every generation. The experiences are different, but the silence is the same.</p>
+            </div>
+            <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                <div class="need-blurbs fade-in">
+                    <div class="need-blurb">
+                        <div class="eyebrow" style="margin-bottom: 0.75rem;">SOUTH ASIAN WOMEN</div>
+                        <h3>Because Healing Deserves Dignity</h3>
+                        <p>Too many South Asian women navigate the aftermath of relationship trauma — infidelity, domestic violence, emotional abuse — in silence. Cultural stigma around mental health, fear of family judgment, and a lack of culturally competent resources leave women isolated at the moments they need support most.</p>
+                    </div>
+                    <div class="need-blurb">
+                        <div class="eyebrow" style="margin-bottom: 0.75rem;">SOUTH ASIAN MEN</div>
+                        <h3>Because Asking for Help Is Not Weakness</h3>
+                        <p>Too many South Asian men carry the weight of unspoken mental health struggles — depression, anxiety, the pressure to endure in silence. Society tells them that seeking help is a sign of weakness. Cultural expectations around stoicism and self-reliance keep men from ever reaching out, even when they are breaking inside.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pillar-section-inner fade-in" style="margin-top: 2.5rem;">
+                <p>The Solanki Foundation exists to change that equation — expanding access to culturally competent mental health resources, community support, and pathways to healing for South Asian men and women alike. We do not diagnose. We do not run clinical interventions. We connect, fund, and amplify the people and programs that do.</p>
             </div>
         </section>
 
         <!-- ========== PULL QUOTE ========== -->
         <div class="pull-quote fade-in">
-            "The work that matters most is rarely the work that scales fastest."
+            "Strength is not silence. It is the courage to ask for what you deserve."
         </div>
 
-        <!-- ========== CURRENT INITIATIVES ========== -->
+        <!-- ========== THREE PILLARS ========== -->
         <section class="pillar-section">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">CURRENT INITIATIVES</div>
+                <div class="eyebrow">THREE PILLARS</div>
                 <div class="line-accent"></div>
-                <h2>Where We Are Focused</h2>
-                <p>Each initiative receives our full commitment — sustained funding, deep partnership, and the patience to let meaningful change unfold. We stay until the work is done.</p>
+                <h2>Support. Access. Stability.</h2>
+                <p>This initiative is organized around three program areas — each designed to meet people where they are and walk alongside them toward something better.</p>
             </div>
-            <div class="pathway-section" style="padding-top: 2.5rem;">
-                <div class="pathway-grid">
-                    <a href="foundation-mental-health.html" class="pathway-card">
-                        <div class="pathway-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M24 42s-14-8.35-14-18.5C10 16.04 14.04 12 19 12a8.5 8.5 0 015 1.63A8.5 8.5 0 0129 12c4.96 0 9 4.04 9 11.5C38 33.65 24 42 24 42z"/>
-                            </svg>
-                        </div>
-                        <h3>South Asian Wellness</h3>
-                        <p>Expanding access to culturally competent mental health resources, community support, and pathways to healing for South Asian men and women.</p>
-                        <span class="pathway-link">Learn More &rarr;</span>
-                    </a>
-                    <a href="foundation-give.html" class="pathway-card">
-                        <div class="pathway-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="24" cy="24" r="16"/>
-                                <path d="M24 16v16M16 24h16"/>
-                            </svg>
-                        </div>
-                        <h3>Support the Mission</h3>
-                        <p>Every dollar is deployed with discipline — directed toward partner organizations, access subsidies, and community programs.</p>
-                        <span class="pathway-link">Give &rarr;</span>
-                    </a>
-                    <a href="foundation-team.html" class="pathway-card">
-                        <div class="pathway-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="24" cy="16" r="6"/>
-                                <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
-                            </svg>
-                        </div>
-                        <h3>Team & Board</h3>
-                        <p>Meet the founder, next-generation stewards, and the advisory board guiding the Foundation's mission.</p>
-                        <span class="pathway-link">Meet the Team &rarr;</span>
-                    </a>
-                    <a href="foundation-founder.html" class="pathway-card">
-                        <div class="pathway-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M8 40V12a4 4 0 014-4h24a4 4 0 014 4v28"/>
-                                <path d="M16 20h16M16 28h10"/>
-                            </svg>
-                        </div>
-                        <h3>About the Founder</h3>
-                        <p>The personal story behind the mission — and the commitment to see it through.</p>
-                        <span class="pathway-link">Read More &rarr;</span>
-                    </a>
+            <div class="container">
+                <div class="pillar-areas fade-in">
+                    <div class="pillar-area">
+                        <h3>Support</h3>
+                        <p>Peer support circles and community partnerships that create safe, culturally familiar spaces to share, connect, and begin healing — without judgment, without stigma, and without having to explain your world.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Access</h3>
+                        <p>Subsidized therapy, counseling navigation, and connections to culturally competent mental health professionals. We remove the financial and cultural barriers that keep people from getting the help they need.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Stability</h3>
+                        <p>Emergency support pathways through established partner organizations — connecting individuals in crisis to safety resources, legal aid referrals, and transitional support that helps them rebuild on their own terms.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== APPROACH ========== -->
+        <!-- ========== CONTEXT / STATS ========== -->
         <section class="pillar-section alt">
+            <div class="pillar-section-inner fade-in" style="text-align:center; max-width:540px;">
+                <div class="eyebrow">The Reality</div>
+                <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                <h2>Why the Need Is Urgent</h2>
+                <p style="text-align:center;">The data tells a story our communities already know — but rarely confront openly.</p>
+            </div>
+            <div class="stats-row fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">Disproportionate</div>
+                    <div class="stat-label">Rates of intimate partner violence remain significantly underreported, and mental health challenges across the South Asian community go largely unaddressed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Stigma</div>
+                    <div class="stat-label">Cultural expectations around silence, family honor, and emotional endurance prevent both men and women from seeking help</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Gap</div>
+                    <div class="stat-label">Culturally competent therapists and South Asian-focused mental health resources remain critically scarce</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FOUNDER'S NOTE ========== -->
+        <section class="pillar-section">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">HOW WE OPERATE</div>
+                <div class="eyebrow">A Personal Note</div>
                 <div class="line-accent"></div>
-                <h2>Fund. Connect. Amplify.</h2>
-                <p>The Foundation is not a direct service provider — and that is by design. We partner with established mental health organizations, community leaders, and crisis support networks who bring deep expertise and lived understanding to this work. They are already embedded in the communities they serve. Our role is to fund, connect, and amplify — ensuring that resources reach the people who need them through programs that already have their trust.</p>
-                <p>Every dollar is deployed with discipline — clear outcomes, transparent reporting, and a long-term view. We fund and amplify what works rather than building parallel infrastructure. Patient capital for healing.</p>
+                <h2>Why This Work Matters</h2>
+                <div class="founder-note">
+                    <p>I grew up in a South Asian household where certain things were never discussed. Mental health. Marital struggles. The quiet suffering that happened behind closed doors. Men did not talk about their feelings. Women did not talk about their pain. These were things you simply did not name.</p>
+                    <p>The Solanki Foundation was born from the belief that silence is not strength — and that our community deserves more than endurance. Women navigating trauma deserve support that understands their world. Men carrying the weight of unspoken struggles deserve a path to healing that does not require them to break first. Everyone deserves resources that meet them where they are.</p>
+                    <p>This is not charity. This is accountability. To the people who raised us, to the ones raising the next generation, and to the culture we want to build going forward.</p>
+                    <div class="founder-attribution">
+                        NITIN SOLANKI
+                        <span>Founder, Solanki Co</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1065,15 +859,14 @@
             <h2>Be Part of the Change</h2>
             <p>Whether through direct support, organizational partnerships, or simply sharing the mission — there are meaningful ways to contribute.</p>
             <div class="cta-buttons">
-                <a href="foundation-mental-health.html" class="cta-btn">Our First Initiative</a>
-                <a href="foundation-give.html" class="cta-btn">Support the Mission</a>
+                <a href="foundation-support.html" class="cta-btn">Find Support</a>
                 <a href="foundation-partners.html" class="cta-btn">Partner With Us</a>
             </div>
         </div>
 
         <!-- ========== BACK ========== -->
         <div class="back-section fade-in">
-            <a href="index.html" class="back-link"><span>&larr;</span> Back to Ecosystem</a>
+            <a href="foundation.html" class="back-link"><span>&larr;</span> Back to Foundation</a>
         </div>
 
     </main>
@@ -1124,14 +917,10 @@
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            if (window.scrollY > 10) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
         });
 
         const observer = new IntersectionObserver((entries) => {

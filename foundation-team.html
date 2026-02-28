@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team & Board | The Solanki Foundation</title>
+    <meta name="description" content="Meet the people behind The Solanki Foundation — founder Nitin Solanki, next-generation stewards, and the advisory board guiding our mission.">
+    <meta property="og:title" content="Team & Board | The Solanki Foundation">
+    <meta property="og:description" content="Meet the people behind The Solanki Foundation — founder Nitin Solanki, next-generation stewards, and the advisory board guiding our mission.">
+    <meta property="og:url" content="https://solanki.co/foundation-team.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://solanki.co/foundation-team.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FCFAF7;
+            --bg-card: #E2DBD6;
+            --accent: #D4C4B0;
+            --text: #1A1C1E;
+            --text-mid: rgb(120,110,100);
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 18px 20px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            background: rgba(252, 250, 247, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(252, 250, 247, 0.95);
+            border-bottom: 1px solid rgba(212, 196, 176, 0.3);
+        }
+
+        .hamburger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger-lines {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 20px;
+            height: 14px;
+        }
+
+        .hamburger-lines span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hamburger-lines span:first-child { margin-bottom: 5px; }
+
+        .hamburger-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text);
+            display: none;
+        }
+
+        .hamburger.active .hamburger-lines span:first-child { transform: rotate(45deg) translate(2px, 2px); }
+        .hamburger.active .hamburger-lines span:last-child { transform: rotate(-45deg) translate(2px, -2px); }
+        .hamburger.active .hamburger-label { visibility: hidden; }
+
+        .header-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            justify-self: center;
+        }
+
+        .logo-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text);
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+        }
+
+        .logo-divider { width: 1px; height: 28px; background: var(--accent); }
+
+        .logo-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+
+        .logo-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--text);
+            letter-spacing: 3px;
+            padding-right: 3px;
+        }
+
+        .logo-co {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.5rem;
+            font-weight: 300;
+            color: var(--text-mid);
+            letter-spacing: 1.5px;
+            padding-right: 1.5px;
+            margin-top: 3px;
+        }
+
+        .nav-desktop { display: none; align-items: center; gap: 40px; }
+
+        .nav-desktop a {
+            font-size: 0.625rem;
+            font-weight: 400;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-desktop a:hover { opacity: 0.5; }
+
+        .header-right { display: flex; justify-content: flex-end; }
+
+        .connect-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            min-height: 44px;
+            white-space: nowrap;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .connect-btn:hover { background: var(--accent); color: var(--text); }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            width: 320px;
+            max-width: 85vw;
+            background: var(--bg);
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 6rem 2.5rem 3rem;
+            gap: 0;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0);
+        }
+
+        .mobile-nav.active { transform: translateX(0); box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08); }
+
+        .mobile-nav-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav a {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.65rem 0;
+            width: 100%;
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-nav a:hover { opacity: 0.5; }
+
+        .nav-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(26, 28, 30, 0.15);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-backdrop.active { opacity: 1; pointer-events: auto; }
+
+        /* MAIN CONTENT */
+        main {
+            margin-top: 72px;
+        }
+
+        .pillar-hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+        }
+
+        .lockup-parent {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .lockup-entity {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .divider-center {
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            margin: 2rem auto;
+        }
+
+        .pillar-section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+        }
+
+        .pillar-section.alt {
+            background: var(--bg-card);
+        }
+
+        .pillar-section.visible {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .pillar-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .role-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-section p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FOUNDER SECTION */
+        .founder-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .founder-section p {
+            max-width: 700px;
+        }
+
+        .pathway-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text);
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .pathway-link:hover {
+            color: var(--text-mid);
+            border-bottom-color: var(--text-mid);
+        }
+
+        /* NEXT GEN GRID */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .team-card {
+            background: var(--white);
+            border: 1px solid var(--accent);
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .team-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--text-mid);
+            font-weight: 400;
+        }
+
+        .team-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role-label {
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: var(--bg-card);
+            margin: 3rem auto;
+            max-width: 800px;
+            opacity: 0;
+        }
+
+        .pull-quote.visible {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .pull-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        /* BOARD OF ADVISORS */
+        .advisor-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .advisor-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .advisor-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .advisor-placeholder {
+            border: 2px dashed var(--text-mid);
+            padding: 2rem;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .advisor-placeholder:nth-child(1) { animation-delay: 0s; }
+        .advisor-placeholder:nth-child(2) { animation-delay: 0.1s; }
+        .advisor-placeholder:nth-child(3) { animation-delay: 0.2s; }
+        .advisor-placeholder:nth-child(4) { animation-delay: 0.3s; }
+        .advisor-placeholder:nth-child(5) { animation-delay: 0.4s; }
+        .advisor-placeholder:nth-child(6) { animation-delay: 0.5s; }
+
+        .advisor-placeholder h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .advisor-placeholder p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-mid);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+        }
+
+        .cta-section.visible {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-link {
+            display: inline-block;
+            border: 1px solid var(--text);
+            color: var(--text);
+            padding: 0.75rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* BACK LINK */
+        .back-section {
+            padding: 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text-mid);
+            border-bottom-color: var(--text-mid);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg);
+            border-top: 1px solid rgba(212, 196, 176, 0.4);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .footer-wordmark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--text);
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+        }
+
+        .footer-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--accent);
+        }
+
+        .footer-text-block { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+        .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px; padding-right: 3px; color: var(--text); }
+        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; padding-right: 1.5px; margin-top: 3px; }
+
+        .footer-rule {
+            width: 48px;
+            height: 2px;
+            background: var(--text);
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(212, 196, 176, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            border-color: var(--accent);
+            background: rgba(237, 232, 227, 0.4);
+        }
+
+        .footer-socials a svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--text-mid);
+            transition: fill 0.3s ease;
+        }
+
+        .footer-socials a:hover svg { fill: var(--text); }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--text-mid);
+            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.72rem;
+            color: var(--text-mid);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+
+        /* RESPONSIVE */
+        @media (max-width: 767px) {
+            .lockup-parent,
+            .lockup-entity {
+                font-size: 2rem;
+            }
+
+            .pillar-hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .pillar-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .pull-quote p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            header { padding: 20px 40px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .hamburger-label { display: block; }
+            .logo-name { font-size: 1.2rem; }
+            .connect-btn { font-size: 0.65rem; padding: 11px 20px; }
+        }
+
+        @media (min-width: 1024px) {
+            header { padding: 22px 60px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .logo-name { font-size: 1.3rem; letter-spacing: 3px; padding-right: 3px; }
+            .nav-desktop { display: flex; justify-self: end; }
+            .nav-desktop .connect-btn { font-size: 0.7rem; padding: 12px 28px; }
+            .header-right { display: none; }
+            .hamburger-lines { width: 22px; }
+
+            .pillar-hero {
+                padding: 5rem 4rem;
+            }
+
+            .pillar-section {
+                padding: 5rem 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <div class="hamburger-lines">
+                <span></span>
+                <span></span>
+            </div>
+            <span class="hamburger-label">Menu</span>
+        </button>
+
+        <a href="index.html" class="header-logo">
+            <span class="logo-mark">S</span>
+            <span class="logo-divider"></span>
+            <span class="logo-text">
+                <span class="logo-name">SOLANKI</span>
+                <span class="logo-co">CO</span>
+            </span>
+        </a>
+
+        <div class="header-right">
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </div>
+
+        <nav class="nav-desktop">
+            <a href="foundation.html" class="active">Foundation</a>
+            <a href="capital.html">Capital</a>
+            <a href="advisory.html">Advisory</a>
+            <a href="digital.html">Digital</a>
+            <a href="studios.html">Studios</a>
+            <a href="travel.html">Travel</a>
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </nav>
+    </header>
+
+    <!-- Nav Backdrop -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-label">Main Menu</span>
+        <a href="foundation.html">Foundation</a>
+        <a href="capital.html">Capital</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="digital.html">Digital</a>
+        <a href="studios.html">Studios</a>
+        <a href="travel.html">Travel</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="pillar-hero">
+            <div class="eyebrow">The Solanki Foundation</div>
+            <h1 class="lockup-parent">THE PEOPLE</h1>
+            <h2 class="lockup-entity">BEHIND THE MISSION</h2>
+            <p>Built on family values, guided by expertise, and committed to the long view. The people behind the Solanki Foundation bring lived experience, professional discipline, and a shared belief that silence is not strength.</p>
+            <div class="divider-center"></div>
+        </section>
+
+        <!-- FOUNDER SECTION -->
+        <section class="pillar-section alt">
+            <div class="eyebrow">FOUNDER</div>
+            <h2>Nitin Solanki</h2>
+            <div class="role-label">Founder & Chairman</div>
+            <div class="founder-section">
+                <p>Nitin Solanki is the founder of Solanki Co — a family holding company built on the belief that discipline, cultural understanding, and sustained commitment create meaningful change. The Solanki Foundation is the impact arm of that vision.</p>
+                <p>Born from personal experience and a deep understanding of the cultural silence around mental health in the South Asian community, the Foundation reflects Nitin's commitment to building something that outlasts him — a legacy of accountability, dignity, and support for those who need it most.</p>
+                <a href="foundation-founder.html" class="pathway-link">Read More About the Founder →</a>
+            </div>
+        </section>
+
+        <!-- NEXT GENERATION SECTION -->
+        <section class="pillar-section">
+            <div class="eyebrow">NEXT-GEN STEWARDS</div>
+            <h2>The Next Generation</h2>
+            <p>The Solanki Foundation is designed to endure beyond its founder. These future stewards will carry the mission forward — ensuring that the values, commitment, and cultural understanding at the heart of this work continue for generations to come.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">JS</div>
+                    <h3>Jia Solanki</h3>
+                    <div class="role-label">Next-Gen Steward</div>
+                    <p>Representing the next generation of the Solanki family, Jia will carry forward the Foundation's commitment to cultural understanding and community impact as she grows into her role.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">DS</div>
+                    <h3>Dhiya Solanki</h3>
+                    <div class="role-label">Next-Gen Steward</div>
+                    <p>The youngest member of the Foundation's future leadership, Dhiya embodies the long-term vision at the heart of this work — building something that endures for generations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PULL QUOTE -->
+        <div class="pull-quote">
+            <p>"Legacy is not what you leave behind. It is what you build that others choose to carry forward."</p>
+        </div>
+
+        <!-- BOARD OF ADVISORS SECTION -->
+        <section class="pillar-section alt">
+            <div class="eyebrow">BOARD OF ADVISORS</div>
+            <h2>Guided by Expertise</h2>
+            <p>The Foundation's Board of Advisors brings together professionals with deep expertise in the areas that matter most to our mission. As we formalize our advisory board, we are seeking leaders in these critical disciplines.</p>
+            <div class="advisor-grid">
+                <div class="advisor-placeholder">
+                    <h3>Mental Health Professional</h3>
+                    <p>A licensed clinician with expertise in culturally competent care and South Asian community mental health needs.</p>
+                </div>
+                <div class="advisor-placeholder">
+                    <h3>Legal Counsel</h3>
+                    <p>An attorney experienced in nonprofit governance, domestic violence law, and immigrant rights.</p>
+                </div>
+                <div class="advisor-placeholder">
+                    <h3>Financial Advisor</h3>
+                    <p>A CPA or financial professional to ensure fiscal discipline, transparent reporting, and sustainable growth.</p>
+                </div>
+                <div class="advisor-placeholder">
+                    <h3>Community Leader</h3>
+                    <p>A respected voice within the South Asian community with deep ties to grassroots organizations and cultural institutions.</p>
+                </div>
+                <div class="advisor-placeholder">
+                    <h3>Corporate Partner</h3>
+                    <p>A business leader experienced in CSR, corporate giving programs, and strategic partnerships.</p>
+                </div>
+                <div class="advisor-placeholder">
+                    <h3>Survivor Advocate</h3>
+                    <p>Someone with lived experience who can ensure the Foundation's work remains grounded in the reality of those it serves.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOIN THE BOARD CTA -->
+        <section class="pillar-section cta-section">
+            <div class="eyebrow">GET INVOLVED</div>
+            <h2>Interested in Serving?</h2>
+            <p>If you bring expertise in mental health, legal services, finance, community leadership, or corporate partnerships — and share our commitment to the South Asian community — we'd like to hear from you.</p>
+            <a href="mailto:foundation@solanki.co" class="cta-link">foundation@solanki.co</a>
+        </section>
+
+        <!-- BACK SECTION -->
+        <section class="back-section">
+            <a href="foundation.html" class="back-link">← Back to Foundation</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-wordmark">
+            <span class="footer-mark">S</span>
+            <span class="footer-divider"></span>
+            <span class="footer-text-block">
+                <span class="footer-name">SOLANKI</span>
+                <span class="footer-co">CO</span>
+            </span>
+        </div>
+        <div class="footer-rule"></div>
+        <div class="footer-socials">
+            <a href="https://instagram.com/solanki.co" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.957c.453.453.757.91.957 1.47.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.957 1.47 4.08 4.08 0 01-1.47.957c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.957 4.08 4.08 0 01-.957-1.47c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.957-1.47A4.08 4.08 0 015.063 2.3c.46-.163 1.26-.35 2.43-.403C8.759 1.84 9.139 1.827 12 1.827zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126A5.876 5.876 0 004.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://x.com/solanki" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Solanki Co</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+    </footer>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Team & Board — The Solanki Foundation",
+        "url": "https://solanki.co/foundation-team.html",
+        "description": "Meet the people behind The Solanki Foundation — founder Nitin Solanki, next-generation stewards, and the advisory board guiding our mission.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Solanki Co",
+            "url": "https://solanki.co"
+        }
+    }
+    </script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+            mobileNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+
+        // INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // OBSERVE SECTIONS
+        document.querySelectorAll('.pillar-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        document.querySelectorAll('.pull-quote').forEach(quote => {
+            observer.observe(quote);
+        });
+
+        document.querySelectorAll('.cta-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
