@@ -234,6 +234,24 @@
 
         .pull-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--text); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 2rem; }
 
+        /* Pathway Cards */
+        .pathway-section { padding: 0 2rem; }
+        .pathway-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+        .pathway-card { display: block; padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); text-decoration: none; color: var(--text); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pathway-card:hover { border-color: var(--accent); background: rgba(252, 250, 247, 0.6); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+        .pathway-card .pathway-icon { width: 40px; height: 40px; margin-bottom: 1.25rem; color: var(--text-mid); }
+        .pathway-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
+        .pathway-card p { font-size: 0.88rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1rem; }
+        .pathway-link { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+
+        .cta-section { text-align: center; padding: 80px 2rem; }
+        .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
+        .cta-section p { font-size: 1rem; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+        .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cta-btn:hover { background: var(--text); color: var(--bg); }
+
+        @media (min-width: 768px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
+
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .back-link:hover { color: var(--accent); border-color: var(--accent); }
         .back-section { text-align: center; padding: 60px 2rem 80px; }
@@ -414,6 +432,41 @@
                 <p>Mora Sol Digital is designed to scale without proportional time. We build the playbooks and system templates. Implementation partners handle deployment and ongoing management. Clients pay for productized deployments and monthly retainers — not for our hours.</p>
                 <p>Revenue flows through productized deployments, licensing, monthly management retainers, and partner referral fees. As the library of systems grows, each new deployment becomes faster and more profitable.</p>
             </div>
+        </section>
+
+        <section class="pathway-section fade-in" style="padding-top: 20px; padding-bottom: 0;">
+            <div class="pathway-grid">
+                <a href="digital-capabilities.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <rect x="4" y="8" width="32" height="22" rx="2"/><path d="M14 34h12M20 30v4"/><circle cx="20" cy="19" r="4"/>
+                    </svg>
+                    <h3>Capabilities</h3>
+                    <p>AI agents, CRM architecture, analytics, and workflow automation. Productized for operator independence.</p>
+                    <span class="pathway-link">View Capabilities &rarr;</span>
+                </a>
+                <a href="digital-process.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M8 8h8v8H8zM24 8h8v8h-8zM16 24h8v8h-8z"/><path d="M16 12h8M28 16v4h-8M20 24v-4h-8"/>
+                    </svg>
+                    <h3>Our Process</h3>
+                    <p>Build. License. Partner. A deployment model designed for scale without proportional time.</p>
+                    <span class="pathway-link">Our Process &rarr;</span>
+                </a>
+                <a href="digital-inquiry.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M6 10h28v20H6z"/><path d="M6 10l14 12L34 10"/>
+                    </svg>
+                    <h3>Start a Project</h3>
+                    <p>Tell us about the manual work consuming your team. We will show you what a system looks like.</p>
+                    <span class="pathway-link">Project Inquiry &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in">
+            <h2>Replace Manual Work With Systems</h2>
+            <p>Every system starts with a conversation about what is broken. Tell us yours.</p>
+            <a href="digital-inquiry.html" class="cta-btn">Start a Project</a>
         </section>
 
         <div class="back-section fade-in">

@@ -234,6 +234,24 @@
 
         .pull-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--text); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 2rem; }
 
+        /* Pathway Cards */
+        .pathway-section { padding: 0 2rem; }
+        .pathway-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+        .pathway-card { display: block; padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); text-decoration: none; color: var(--text); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pathway-card:hover { border-color: var(--accent); background: rgba(252, 250, 247, 0.6); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+        .pathway-card .pathway-icon { width: 40px; height: 40px; margin-bottom: 1.25rem; color: var(--text-mid); }
+        .pathway-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
+        .pathway-card p { font-size: 0.88rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1rem; }
+        .pathway-link { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+
+        .cta-section { text-align: center; padding: 80px 2rem; }
+        .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
+        .cta-section p { font-size: 1rem; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+        .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cta-btn:hover { background: var(--text); color: var(--bg); }
+
+        @media (min-width: 768px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
+
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .back-link:hover { color: var(--accent); border-color: var(--accent); }
         .back-section { text-align: center; padding: 60px 2rem 80px; }
@@ -414,6 +432,41 @@
                 <p>Studios is not a cost center. It is a brand-building engine that compounds — every conversation, every piece of content, every event creates visibility, trust, and deal flow for every other pillar in the ecosystem. Capital finds its next deal through a founder interview. Advisory attracts a new client through a thought-leadership series. Travel gains a booking through a travel film.</p>
                 <p>Revenue comes through sponsorships, content partnerships, audience monetization, and branded content engagements. But the real value is in what Studios does for the rest of the platform.</p>
             </div>
+        </section>
+
+        <section class="pathway-section fade-in" style="padding-top: 20px; padding-bottom: 0;">
+            <div class="pathway-grid">
+                <a href="studios-portfolio.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <rect x="4" y="4" width="32" height="32" rx="2"/><path d="M4 14h32M14 4v32"/>
+                    </svg>
+                    <h3>Creative Portfolio</h3>
+                    <p>Long-form conversations, short-form series, branded content, and community events.</p>
+                    <span class="pathway-link">View Portfolio &rarr;</span>
+                </a>
+                <a href="studios-approach.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M10 32V16l10-8 10 8v16"/><path d="M16 32v-8h8v8"/>
+                    </svg>
+                    <h3>Editorial Philosophy</h3>
+                    <p>Content as infrastructure. How storytelling builds trust, creates deal flow, and compounds.</p>
+                    <span class="pathway-link">Our Philosophy &rarr;</span>
+                </a>
+                <a href="studios-inquiry.html" class="pathway-card">
+                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M6 10h28v20H6z"/><path d="M6 10l14 12L34 10"/>
+                    </svg>
+                    <h3>Collaborate With Us</h3>
+                    <p>For brands and founders seeking editorial storytelling and content partnerships.</p>
+                    <span class="pathway-link">Partnership Inquiry &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in">
+            <h2>Stories Worth Telling</h2>
+            <p>If you have a brand worth telling stories about, we would like to hear from you.</p>
+            <a href="studios-inquiry.html" class="cta-btn">Start a Conversation</a>
         </section>
 
         <div class="back-section fade-in">
