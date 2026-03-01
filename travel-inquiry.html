@@ -387,7 +387,7 @@
 
         <section class="form-section fade-in">
             <div class="form-container">
-                <form id="inquiryForm">
+                <form id="inquiryForm" action="https://formspree.io/f/xlgwkpbd" method="POST">
                     <div class="form-group">
                         <label class="form-label" for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-input" required>
@@ -532,9 +532,22 @@
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            form.style.display = 'none';
-            confirmationMessage.classList.add('show');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    confirmationMessage.classList.add('show');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            }).catch(() => {
+                alert('Something went wrong. Please try again.');
+            });
         });
 
         // Fade-in animation
