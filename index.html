@@ -679,6 +679,105 @@
         }
 
         /* ============================================
+           HOW SOLANKI WORKS
+        ============================================ */
+        .how-it-works {
+            padding: 6rem 2rem;
+        }
+
+        .how-it-works-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .how-it-works-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .how-it-works-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .how-step {
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .how-step-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .how-step h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .how-step p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-mid);
+            font-weight: 300;
+        }
+
+        .how-connector {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .how-it-works-grid {
+                position: relative;
+            }
+
+            .how-connector {
+                display: block;
+                position: absolute;
+                top: 1.5rem;
+                height: 1px;
+                background: var(--accent);
+                opacity: 0.4;
+            }
+
+            .how-connector:first-of-type {
+                left: 33.33%;
+                width: 0;
+                margin-left: -1.5rem;
+            }
+
+            .how-connector:last-of-type {
+                left: 66.66%;
+                width: 0;
+                margin-left: -1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .how-step {
+                padding: 0;
+            }
+        }
+
+        /* ============================================
            MORA SOL STORY
         ============================================ */
         .mora-sol {
@@ -1119,6 +1218,37 @@
                         <p class="tile-desc">Tailor-made travel and experiences. Founder-led curation built on taste, discretion, and trusted partnerships.</p>
                     </a>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== HOW SOLANKI WORKS ========== -->
+        <section class="how-it-works">
+            <div class="how-it-works-inner">
+                <div class="how-it-works-header fade-in">
+                    <div class="eyebrow">THE MODEL</div>
+                    <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                    <h2>How Solanki Works</h2>
+                </div>
+
+                <div class="how-it-works-grid fade-in">
+                    <div class="how-step">
+                        <div class="how-step-number">01</div>
+                        <h3>Curate</h3>
+                        <p>We identify the right partners, operators, and specialists across each pillar — vetted for craft, integrity, and alignment with our standards.</p>
+                    </div>
+
+                    <div class="how-step">
+                        <div class="how-step-number">02</div>
+                        <h3>Partner</h3>
+                        <p>Every engagement is structured through trusted partnerships. Solanki sets the framework, quality bar, and client relationship — partners execute with precision.</p>
+                    </div>
+
+                    <div class="how-step">
+                        <div class="how-step-number">03</div>
+                        <h3>Deliver</h3>
+                        <p>One point of contact. Consistent standards. Whether it's capital, counsel, technology, or travel — the experience is seamless and the outcomes are real.</p>
+                    </div>
                 </div>
             </div>
         </section>
