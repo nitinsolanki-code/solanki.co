@@ -370,8 +370,19 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            background: #1A1C1E url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&fit=crop') center/cover no-repeat;
-            /* To swap for local image: background: #1A1C1E url('hero.jpg') center/cover no-repeat; */
+            background: #1A1C1E;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1594128740972-0f855f0efcc0?w=1920&q=80&fit=crop') center/cover no-repeat;
+            filter: grayscale(100%) brightness(0.9);
+            transition: filter 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-image:hover .hero-bg {
+            filter: grayscale(0%) brightness(1);
         }
 
         .hero-image::before {
@@ -652,16 +663,18 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 50%;
-            width: 0;
+            left: 0;
+            width: 100%;
             height: 1px;
             background: var(--text);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .tile-link:hover::after {
-            width: 100%;
-            left: 0;
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .tile-link span {
@@ -788,6 +801,25 @@
             max-width: 680px;
             margin: 0 auto;
             text-align: center;
+        }
+
+        .mora-sol-photo {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto 3rem;
+            overflow: hidden;
+        }
+
+        .mora-sol-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%) brightness(0.8);
+            transition: filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mora-sol-photo:hover img {
+            filter: grayscale(0%) brightness(1);
         }
 
         .mora-sol h2 {
@@ -1009,7 +1041,7 @@
                 font-size: 0.65rem;
                 padding: 11px 20px;
             }
-            section { padding: 120px 3rem; }
+            section { padding: 128px 3rem; }
             .tiles-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
@@ -1088,6 +1120,7 @@
 
         <!-- ========== HERO IMAGE ========== -->
         <section class="hero-image">
+            <div class="hero-bg"></div>
             <div class="hero-image-content">
                 <h1>SOLANKI</h1>
             </div>
@@ -1259,6 +1292,9 @@
                 <div class="eyebrow">MORA SOL</div>
                 <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
                 <h2>A Name Rooted in Family</h2>
+                <div class="mora-sol-photo">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80&fit=crop" alt="Stacked books evoking archive, legacy, and the quiet pursuit of mastery" />
+                </div>
                 <p>Mora Sol is derived from my grandfather, Morarbhai Solanki — a man who left Gujarat for Zambia with very little, searching for opportunity and a better life for his family. He was a pioneer in the truest sense: no blueprint, no safety net, just conviction and the willingness to sacrifice everything for the next generation.</p>
                 <p>In Spanish, the words translate to "dwelling sun" — warmth, resilience, and light. Every Mora Sol entity carries his spirit: move forward with quiet strength, treat people with integrity, and build something that outlasts you.</p>
             </div>
