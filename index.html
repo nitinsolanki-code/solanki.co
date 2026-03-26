@@ -791,6 +791,122 @@
         }
 
         /* ============================================
+           PROOF OF WORK
+        ============================================ */
+        .proof-of-work {
+            background: var(--bg);
+        }
+
+        .proof-of-work-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: var(--bg-card);
+            padding: 3.5rem 2.5rem;
+            margin-top: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .proof-card:hover {
+            background: var(--accent);
+        }
+
+        .proof-card-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .proof-card h3 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .proof-card p {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--text-mid);
+            font-weight: 300;
+            max-width: 540px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .proof-card-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid rgba(26, 28, 30, 0.08);
+            padding-top: 1.5rem;
+        }
+
+        .proof-stat-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--text);
+            display: block;
+        }
+
+        .proof-stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+        }
+
+        .proof-card-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .proof-card-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--text);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .proof-card:hover .proof-card-link::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @media (max-width: 767px) {
+            .proof-card { padding: 2.5rem 1.5rem; }
+            .proof-card-stats { grid-template-columns: 1fr; gap: 1.25rem; }
+        }
+
+        /* ============================================
            MORA SOL STORY
         ============================================ */
         .mora-sol {
@@ -1283,6 +1399,22 @@
                         <p>One point of contact. Consistent standards. Whether it's capital, counsel, technology, or travel — the experience is seamless and the outcomes are real.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ========== PROOF OF WORK ========== -->
+        <section class="proof-of-work">
+            <div class="proof-of-work-inner fade-in">
+                <div class="eyebrow">PROOF OF WORK</div>
+                <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; margin-bottom: 0.5rem;">The Model in Action</h2>
+
+                <a href="case-study-kazozo.html" class="proof-card">
+                    <span class="proof-card-eyebrow">Advisory + Digital + Studios</span>
+                    <h3>Kazozo</h3>
+                    <p>An autonomous AI workforce platform — from strategic positioning and multi-agent architecture to brand identity and go-to-market — built end-to-end across three Mora Sol pillars.</p>
+                    <span class="proof-card-link">Read the Case Study</span>
+                </a>
             </div>
         </section>
 
