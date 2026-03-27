@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solanki Travel – Tailor-Made Private Journeys | Solanki Co</title>
-    <meta name="description" content="Tailor-made travel and experiences. Founder-led curation built on taste, discretion, and trusted partnerships.">
-    <meta property="og:title" content="Solanki Private Travel – Tailor-Made Experiences">
-    <meta property="og:description" content="Tailor-made travel and experiences. Founder-led curation built on taste, discretion, and trusted partnerships.">
+    <meta name="description" content="Travel built around how you move, not where everyone else goes. Founder-led curation, executed through trusted partners.">
+    <meta property="og:title" content="Solanki Private Travel – Founder-Led Curation">
+    <meta property="og:description" content="Travel built around how you move, not where everyone else goes. Founder-led curation, executed through trusted partners.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://solanki.co/travel.html">
     <link rel="canonical" href="https://solanki.co/travel.html">
@@ -234,23 +234,18 @@
 
         .pull-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--text); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 2rem; }
 
-        /* Pathway Cards */
-        .pathway-section { padding: 0 2rem; }
-        .pathway-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-        .pathway-card { display: block; padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); text-decoration: none; color: var(--text); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .pathway-card:hover { border-color: var(--accent); background: rgba(252, 250, 247, 0.6); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
-        .pathway-card .pathway-icon { width: 40px; height: 40px; margin-bottom: 1.25rem; color: var(--text-mid); }
-        .pathway-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
-        .pathway-card p { font-size: 0.88rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1rem; }
-        .pathway-link { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+        /* How It Works Steps */
+        .steps-grid { max-width: 720px; margin: 2.5rem auto 0; }
+        .step-item { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid rgba(212, 196, 176, 0.4); }
+        .step-item:last-child { border-bottom: none; }
+        .step-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); text-align: center; padding-top: 0.15rem; }
+        .step-body h4 { font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; color: var(--text); }
+        .step-body p { font-size: 0.92rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 0; }
 
-        .cta-section { text-align: center; padding: 80px 2rem; }
-        .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
-        .cta-section p { font-size: 1rem; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
-        .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .cta-btn:hover { background: var(--text); color: var(--bg); }
-
-        @media (min-width: 768px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
+        /* Closing CTA */
+        .closing-section { background: var(--bg-card); text-align: center; padding: 80px 2rem; }
+        .closing-section p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-style: italic; color: var(--text); line-height: 1.6; max-width: 560px; margin: 0 auto 1.5rem; }
+        .closing-contact { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mid); }
 
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .back-link:hover { color: var(--accent); border-color: var(--accent); }
@@ -368,6 +363,7 @@
 
     <main>
 
+        <!-- Hero -->
         <section class="pillar-hero">
             <div class="pillar-hero-content">
                 <div class="eyebrow">Travel</div>
@@ -376,97 +372,100 @@
                     <div class="lockup-parent">SOLANKI</div>
                     <div class="lockup-entity">PRIVATE TRAVEL</div>
                 </div>
-                <p class="pillar-subtitle">Curated, founder-led travel for a small circle. By request only.</p>
+                <p class="pillar-subtitle">Travel built around how you move, not where everyone else goes.</p>
                 <div class="divider-center"></div>
             </div>
         </section>
 
+        <!-- The Premise -->
         <section class="pillar-section alt">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">THE PHILOSOPHY</div>
+                <div class="eyebrow">THE PREMISE</div>
                 <div class="line-accent"></div>
-                <h2>Travel as an Art of Living</h2>
-                <p>The most meaningful journeys are not found in a catalog. They are assembled — piece by piece, relationship by relationship — by someone who understands not just where you want to go, but why.</p>
-                <p>Solanki Private Travel works with a deliberately small number of clients. Every itinerary reflects personal taste and deep partner relationships built over years — not algorithms, not volume. That selectivity is the point.</p>
+                <h2>A Third Option</h2>
+                <p>Most travel falls into two categories: you plan everything yourself, or you hand it to an agency and hope for the best. Neither works for the way you actually want to travel.</p>
+                <p>Solanki Private Travel is a third option. We curate — the destinations, the properties, the experiences, the people on the ground — and we work through a vetted network of operators and local partners who execute with precision. You get the trip. We set the standard. Our partners deliver it.</p>
+                <p style="font-style: italic;">This isn't a travel agency. It's a private travel desk for a small number of clients who value taste, discretion, and not having to think about logistics.</p>
             </div>
         </section>
 
-        <div class="pull-quote fade-in">
-            "The best journeys are not planned. They are curated."
-        </div>
-
+        <!-- What We Bring -->
         <section class="pillar-section">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">WHAT WE OFFER</div>
+                <div class="eyebrow">WHAT WE BRING</div>
                 <div class="line-accent"></div>
-                <h2>Journeys Designed Around You</h2>
-                <p>Each engagement begins with a conversation — not a form. We listen before we plan, and we curate before we book. The result is travel that feels personal because it is.</p>
+                <h2>Founder-Led Curation, Executed Through Trusted Partners</h2>
             </div>
             <div class="container">
                 <div class="pillar-areas fade-in">
                     <div class="pillar-area">
-                        <h3>Bespoke Itineraries</h3>
-                        <p>Fully custom travel planning for individuals, couples, and families. From hotel selection and dining reservations to private guides and seamless transfers — every detail considered.</p>
+                        <h3>Curation</h3>
+                        <p>We select destinations, properties, and experiences based on how your group moves and what you care about. Not from a catalog. From conversation.</p>
                     </div>
                     <div class="pillar-area">
-                        <h3>Curated Experiences</h3>
-                        <p>Access to experiences that do not appear on any website — private viewings, chef tables, cultural immersions, and encounters that transform a trip into a memory.</p>
-                    </div>
-                    <div class="pillar-area">
-                        <h3>Group &amp; Event Travel</h3>
-                        <p>Milestone celebrations, retreats, and intimate group journeys designed with the same attention as a solo itinerary. Logistics handled invisibly so every guest simply arrives and enjoys.</p>
+                        <h3>Vetted Partners</h3>
+                        <p>Every guide, driver, chef, and local operator is someone we've worked with or personally verified. We choose who's on the ground. Our network handles the rest.</p>
                     </div>
                     <div class="pillar-area">
                         <h3>Preferred Access</h3>
-                        <p>Relationships with the world's finest hotels, resorts, and experience partners mean preferred rates, room upgrades, amenity credits, and priority availability — benefits that come from trust, not volume.</p>
+                        <p>Bookings routed through preferred partner programs — unlocking VIP recognition, upgrades, resort credits, and priority treatment at the properties that matter.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Seamless Support</h3>
+                        <p>A dedicated travel manager handles all logistics before and during your trip. Flight changes, weather pivots, restaurant reservations — handled in real time, not by you.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="pull-quote fade-in">
+            "Founder-led curation, executed through trusted partners — so you handle nothing."
+        </div>
+
+        <!-- How It Works -->
         <section class="pillar-section alt">
             <div class="pillar-section-inner fade-in">
-                <div class="eyebrow">THE DIFFERENCE</div>
+                <div class="eyebrow">HOW IT WORKS</div>
                 <div class="line-accent"></div>
-                <h2>Taste, Not Scale</h2>
-                <p>This is not a travel agency. There are no bookings to process, no catalog to browse. Solanki Private Travel is a personal practice — selective by design, intimate by nature. We serve a small circle because that is the only way to deliver the depth of curation and care that defines this work.</p>
-                <p>Our partner relationships are built on mutual respect and repeat trust. When we call a hotel, they know exactly who is arriving and what matters to them. That level of care cannot be automated — and we have no interest in trying.</p>
+                <h2>From Conversation to Departure</h2>
+
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-body">
+                            <h4>We talk.</h4>
+                            <p>A short conversation about where you want to go, who's traveling, and what matters — the vibe, the non-negotiables, the things you'd never think to ask for but would remember for years.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-body">
+                            <h4>We curate.</h4>
+                            <p>We design the trip — destinations, properties, experiences, the rhythm of each day. Our operating partners build the detailed itinerary and lock in bookings through preferred channels.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-body">
+                            <h4>You approve.</h4>
+                            <p>We present the full trip. You review, refine, sign off. Nothing gets booked until it feels right.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">04</div>
+                        <div class="step-body">
+                            <h4>You travel.</h4>
+                            <p>Private transfers waiting. Guides who know the unmarked trails. Restaurants where they know your name. A travel manager on-call if anything shifts. You're on the trip — not managing it.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="pathway-section fade-in" style="padding-top: 20px; padding-bottom: 0;">
-            <div class="pathway-grid">
-                <a href="travel-destinations.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <circle cx="20" cy="20" r="16"/><path d="M4 20h32M20 4c-4 4-6.5 10-6.5 16s2.5 12 6.5 16c4-4 6.5-10 6.5-16S24 8 20 4z"/>
-                    </svg>
-                    <h3>Destinations</h3>
-                    <p>Curated regions — from the Italian coast to the temples of Japan. Each chosen for depth, not trend.</p>
-                    <span class="pathway-link">Explore Destinations &rarr;</span>
-                </a>
-                <a href="travel-experiences.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M8 32l6-10 5 6 6-14 7 18"/><rect x="4" y="4" width="32" height="28" rx="2"/>
-                    </svg>
-                    <h3>Experiences</h3>
-                    <p>Private dining, cultural immersions, wellness retreats, and moments that don't appear on any itinerary.</p>
-                    <span class="pathway-link">View Experiences &rarr;</span>
-                </a>
-                <a href="travel-inquiry.html" class="pathway-card">
-                    <svg class="pathway-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <path d="M6 10h28v20H6z"/><path d="M6 10l14 12L34 10"/>
-                    </svg>
-                    <h3>Begin a Conversation</h3>
-                    <p>Every journey starts with a conversation. Share your vision — we'll shape the rest.</p>
-                    <span class="pathway-link">Private Inquiry &rarr;</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="cta-section fade-in">
-            <h2>Your Journey Begins Here</h2>
-            <p>Tell us where you want to go and how you want to feel when you get there. We'll handle the rest.</p>
-            <a href="travel-inquiry.html" class="cta-btn">Start a Conversation</a>
+        <!-- Closing -->
+        <section class="closing-section fade-in">
+            <p>Solanki Private Travel is invite-only and limited to a small number of trips each year. If this resonates, reach out.</p>
+            <div class="closing-contact">nitin@solanki.co</div>
         </section>
 
         <div class="back-section fade-in">
