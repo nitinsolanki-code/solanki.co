@@ -273,6 +273,23 @@
         .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .cta-btn:hover { background: var(--text); color: var(--bg); }
 
+        /* Portal CTA Block */
+        .portal-block { text-align: center; padding: 100px 2rem; background: var(--bg-card); }
+        .portal-block-inner { max-width: 720px; margin: 0 auto; }
+        .portal-block h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem; }
+        .portal-block .portal-sub { font-size: 1rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; max-width: 500px; margin: 0 auto 2.5rem; }
+        .portal-actions { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 640px; margin: 0 auto; }
+        .portal-action { display: block; padding: 1.75rem 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); text-decoration: none; color: var(--text); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .portal-action:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+        .portal-action h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.4rem; }
+        .portal-action p { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; line-height: 1.5; margin: 0; }
+        .portal-action .portal-arrow { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); display: block; margin-top: 0.75rem; }
+        @media (min-width: 768px) { .portal-actions { grid-template-columns: repeat(3, 1fr); } }
+
+        /* Nav portal utility link */
+        .nav-portal { font-size: 0.6rem !important; font-weight: 400 !important; letter-spacing: 1.5px !important; text-transform: uppercase; color: var(--text-mid) !important; text-decoration: none; padding: 10px 0 10px 20px; border-left: 1px solid rgba(212, 196, 176, 0.4); margin-left: 20px; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-portal:hover { opacity: 0.5; }
+
         @media (min-width: 768px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
 
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -404,6 +421,7 @@
             <a href="studios.html">Studios</a>
             <a href="travel.html">Travel</a>
             <a href="connect.html" class="connect-btn">Connect</a>
+            <a href="https://portal.solanki.co" class="nav-portal" target="_blank" rel="noopener">Portal</a>
         </nav>
     </header>
 
@@ -509,10 +527,30 @@
             </div>
         </section>
 
-        <section class="cta-section fade-in">
-            <h2>Capital With Conviction</h2>
-            <p>If you share our investment discipline, we would like to hear from you.</p>
-            <a href="connect.html?from=capital" class="cta-btn">Start a Conversation</a>
+        <section class="portal-block fade-in">
+            <div class="portal-block-inner">
+                <div class="eyebrow">Mora Sol Capital</div>
+                <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                <h2>Access Your Dashboard</h2>
+                <p class="portal-sub">Portfolio reporting, deal materials, and fund communications — all in one place.</p>
+                <div class="portal-actions">
+                    <a href="https://portal.solanki.co" class="portal-action" target="_blank" rel="noopener">
+                        <h3>Investor Portal</h3>
+                        <p>K-1s, distributions, quarterly reports, and portfolio performance.</p>
+                        <span class="portal-arrow">Sign In &rarr;</span>
+                    </a>
+                    <a href="https://portal.solanki.co" class="portal-action" target="_blank" rel="noopener">
+                        <h3>Deal Room</h3>
+                        <p>Active raise materials, underwriting, and partnership terms.</p>
+                        <span class="portal-arrow">Enter &rarr;</span>
+                    </a>
+                    <a href="connect.html?from=capital" class="portal-action">
+                        <h3>Request Access</h3>
+                        <p>New to Mora Sol Capital. Start a conversation about alignment.</p>
+                        <span class="portal-arrow">Inquire &rarr;</span>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <div class="back-section fade-in">
