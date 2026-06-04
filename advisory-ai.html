@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Value Path Sprint — Mora Sol Advisory | Solanki Co</title>
+    <meta name="description" content="A senior-led AI strategy sprint for leadership teams. Turn scattered AI experiments into a prioritized roadmap, business case, and first 90-day plan.">
+    <meta property="og:title" content="AI Value Path Sprint — Mora Sol Advisory">
+    <meta property="og:description" content="A senior-led AI strategy sprint for leadership teams. Turn scattered AI experiments into a prioritized roadmap, business case, and first 90-day plan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solanki.co/advisory-ai.html">
+    <link rel="canonical" href="https://solanki.co/advisory-ai.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@solanki">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%23E2DBD6'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='300' fill='%231A1C1E' letter-spacing='2'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #FCFAF7; --bg-card: #E2DBD6; --accent: #D4C4B0; --text: #1A1C1E; --text-mid: rgb(120, 110, 100); --white: #FFFFFF; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.25; }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 18px 20px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            background: rgba(252, 250, 247, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(252, 250, 247, 0.95);
+            border-bottom: 1px solid rgba(212, 196, 176, 0.3);
+        }
+
+        .hamburger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger-lines {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 20px;
+            height: 14px;
+        }
+
+        .hamburger-lines span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hamburger-lines span:first-child {
+            margin-bottom: 5px;
+        }
+
+        .hamburger-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text);
+            display: none;
+        }
+
+        .hamburger.active .hamburger-lines span:first-child {
+            transform: rotate(45deg) translate(2px, 2px);
+        }
+
+        .hamburger.active .hamburger-lines span:last-child {
+            transform: rotate(-45deg) translate(2px, -2px);
+        }
+
+        .hamburger.active .hamburger-label {
+            visibility: hidden;
+        }
+
+        .header-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            justify-self: center;
+        }
+
+        .logo-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text);
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--accent);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .logo-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--text);
+            letter-spacing: 3px;
+            padding-right: 3px;
+        }
+
+        .logo-co {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.5rem;
+            font-weight: 300;
+            color: var(--text-mid);
+            letter-spacing: 1.5px;
+            padding-right: 1.5px;
+            margin-top: 3px;
+        }
+
+        .nav-desktop {
+            display: none;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-desktop a {
+            font-size: 0.625rem;
+            font-weight: 400;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-desktop a:hover { opacity: 0.5; }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .connect-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            min-height: 44px;
+            white-space: nowrap;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .connect-btn:hover {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        /* Mobile Nav — Left-Slide Panel (Janu pattern) */
+        .mobile-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 320px; max-width: 85vw; background: var(--bg); z-index: 1002; display: flex; flex-direction: column; align-items: flex-start; padding: 6rem 2.5rem 3rem; gap: 0; transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 4px 0 24px rgba(0, 0, 0, 0); }
+        .mobile-nav.active { transform: translateX(0); box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08); }
+        .mobile-nav a { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 400; color: var(--text); text-decoration: none; padding: 0.65rem 0; width: 100%; transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-nav a:hover { opacity: 0.5; }
+        .nav-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 28, 30, 0.15); z-index: 1001; opacity: 0; pointer-events: none; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-backdrop.active { opacity: 1; pointer-events: auto; }
+
+        /* ============================================
+           LAYOUT
+        ============================================ */
+        main { margin-top: 72px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .eyebrow { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 1.25rem; }
+        .line-accent { width: 48px; height: 2px; background: var(--text); margin-bottom: 1.5rem; }
+        .divider-center { width: 48px; height: 2px; background: var(--text); margin: 2rem auto; }
+
+        /* ============================================
+           HERO
+        ============================================ */
+        .pillar-hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 80px; text-align: center; }
+        .pillar-hero-content { max-width: 700px; animation: heroFade 1.2s ease 0.3s backwards; }
+        .pillar-lockup { margin-bottom: 2rem; }
+        .pillar-lockup .lockup-parent { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 8px; }
+        .pillar-lockup .lockup-entity { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300; letter-spacing: clamp(4px, 1vw, 10px); color: var(--text); line-height: 1.15; }
+        .pillar-subtitle { font-size: 1.05rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; max-width: 560px; margin: 0 auto; }
+
+        /* ============================================
+           SECTIONS
+        ============================================ */
+        .pillar-section { padding: 100px 2rem; }
+        .pillar-section.alt { background: var(--bg-card); }
+        .pillar-section-inner { max-width: 720px; margin: 0 auto; }
+        .pillar-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 400; margin-bottom: 1.5rem; }
+        .pillar-section p { font-size: 1rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 1.5rem; }
+        .pillar-section p:last-child { margin-bottom: 0; }
+
+        .pillar-areas { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
+        .pillar-area { padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); }
+        .pillar-area h3 { font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--text); }
+        .pillar-area p { font-size: 0.92rem; line-height: 1.6; color: var(--text-mid); font-weight: 300; margin-bottom: 0; }
+
+        .pull-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--text); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 2rem; }
+
+        /* ============================================
+           METHOD STEPS
+        ============================================ */
+        .method-steps { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2.5rem; }
+        .method-step { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid rgba(212, 196, 176, 0.4); }
+        .method-step:last-child { border-bottom: none; }
+        .method-step-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
+        .method-step h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.3rem; }
+        .method-step p { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; line-height: 1.5; }
+
+        /* ============================================
+           DELIVERABLES
+        ============================================ */
+        .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2.5rem; margin-top: 2rem; }
+        .deliverable-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.6rem 0; }
+        .deliverable-dash { color: var(--accent); font-weight: 400; flex-shrink: 0; }
+        .deliverable-item p { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.5; margin: 0; }
+
+        /* ============================================
+           ENGAGEMENT FORMATS
+        ============================================ */
+        .engagement-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+        .engagement-card { padding: 2rem; background: var(--white); border: 1px solid rgba(212, 196, 176, 0.5); }
+        .engagement-card .eng-label { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.5rem; }
+        .engagement-card h3 { font-size: 1.3rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .engagement-card .eng-desc { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; font-style: italic; color: var(--text-mid); margin-bottom: 1rem; }
+        .engagement-card ul { list-style: none; }
+        .engagement-card ul li { font-size: 0.88rem; color: var(--text-mid); font-weight: 300; padding: 0.5rem 0; border-top: 1px solid rgba(212, 196, 176, 0.3); line-height: 1.5; }
+
+        /* ============================================
+           FAQ
+        ============================================ */
+        .faq-list { margin-top: 2rem; max-width: 720px; }
+        .faq-list details { border-top: 1px solid rgba(212, 196, 176, 0.4); padding: 1.25rem 0; }
+        .faq-list details:last-child { border-bottom: 1px solid rgba(212, 196, 176, 0.4); }
+        .faq-list summary { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 400; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after { content: "+"; color: var(--text-mid); font-size: 1.2rem; line-height: 1; }
+        .faq-list details[open] summary::after { content: "\2013"; }
+        .faq-list details p { margin-top: 0.75rem; font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; max-width: 620px; }
+
+        /* ============================================
+           DIFFERENTIATORS
+        ============================================ */
+        .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 2.5rem; }
+        .diff-item h3 { font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; }
+        .diff-item p { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+
+        /* ============================================
+           CTA
+        ============================================ */
+        .cta-section { text-align: center; padding: 80px 2rem; }
+        .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
+        .cta-section p { font-size: 1rem; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+        .cta-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 14px 32px; border: 1px solid var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cta-btn:hover { background: var(--text); color: var(--bg); }
+
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 2px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .back-link:hover { color: var(--accent); border-color: var(--accent); }
+        .back-section { text-align: center; padding: 60px 2rem 80px; }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer { background: var(--bg); border-top: 1px solid rgba(212, 196, 176, 0.4); padding: 4rem 2rem 3rem; text-align: center; }
+        .footer-wordmark { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+        .footer-mark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 300; color: var(--text); width: 32px; height: 32px; background: var(--bg-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; letter-spacing: 1px; }
+        .footer-divider { width: 1px; height: 24px; background: var(--accent); }
+        .footer-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+        .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 3px; padding-right: 3px; color: var(--text); }
+        .footer-co { font-family: 'Inter', sans-serif; font-size: 0.5rem; font-weight: 300; color: var(--text-mid); letter-spacing: 1.5px; padding-right: 1.5px; margin-top: 3px; }
+        .footer-rule { width: 48px; height: 2px; background: var(--text); margin: 0 auto 1.5rem; }
+        .footer-copy { font-size: 0.75rem; color: var(--text-mid); letter-spacing: 0.5px; margin-bottom: 1.25rem; font-weight: 300; }
+        .footer-socials { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid rgba(212, 196, 176, 0.5); border-radius: 50%; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .footer-socials a:hover { border-color: var(--accent); background: rgba(237, 232, 227, 0.4); }
+        .footer-socials a svg { width: 14px; height: 14px; fill: var(--text-mid); transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .footer-socials a:hover svg { fill: var(--text); }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; }
+        .footer-links a { font-size: 0.72rem; color: var(--text-mid); text-decoration: none; letter-spacing: 0.5px; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .footer-links a:hover { color: var(--text); }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @keyframes heroFade { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 767px) {
+            body { line-height: 1.7; }
+            .deliverables-grid { grid-template-columns: 1fr; }
+            .diff-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 768px) {
+            header { padding: 20px 40px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .hamburger-label { display: block; }
+            .logo-name { font-size: 1.2rem; }
+            .connect-btn { font-size: 0.65rem; padding: 11px 20px; }
+            .pillar-section { padding: 120px 3rem; }
+            .pillar-areas { grid-template-columns: repeat(2, 1fr); }
+            .engagement-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            header { padding: 22px 60px; grid-template-columns: auto 1fr auto; gap: 20px; }
+            .logo-name { font-size: 1.3rem; letter-spacing: 3px; padding-right: 3px; }
+            .nav-desktop { display: flex; justify-self: end; }
+            .nav-desktop .connect-btn { font-size: 0.7rem; padding: 12px 28px; }
+            .header-right { display: none; }
+            .hamburger-lines { width: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <div class="hamburger-lines">
+                <span></span>
+                <span></span>
+            </div>
+            <span class="hamburger-label">Menu</span>
+        </button>
+
+        <a href="index.html" class="header-logo">
+            <span class="logo-mark">S</span>
+            <span class="logo-divider"></span>
+            <span class="logo-text">
+                <span class="logo-name">SOLANKI</span>
+                <span class="logo-co">CO</span>
+            </span>
+        </a>
+
+        <div class="header-right">
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </div>
+
+        <nav class="nav-desktop">
+            <a href="foundation.html">Foundation</a>
+            <a href="capital.html">Capital</a>
+            <a href="advisory.html" class="active">Advisory</a>
+            <a href="digital.html">Digital</a>
+            <a href="studios.html">Studios</a>
+            <a href="travel.html">Travel</a>
+            <a href="connect.html" class="connect-btn">Connect</a>
+        </nav>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="foundation.html">Foundation</a>
+        <a href="capital.html">Capital</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="digital.html">Digital</a>
+        <a href="studios.html">Studios</a>
+        <a href="travel.html">Travel</a>
+    </nav>
+
+    <main>
+
+        <!-- ========== HERO ========== -->
+        <section class="pillar-hero">
+            <div class="pillar-hero-content">
+                <div class="eyebrow">Mora Sol Advisory</div>
+                <div class="line-accent" style="margin-left:auto;margin-right:auto;"></div>
+                <div class="pillar-lockup">
+                    <div class="lockup-entity">AI Value Path Sprint</div>
+                </div>
+                <p class="pillar-subtitle">Most companies don't have an AI problem. They have an AI strategy problem.</p>
+                <div class="divider-center"></div>
+            </div>
+        </section>
+
+        <!-- ========== THE SITUATION ========== -->
+        <section class="pillar-section alt">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">THE SITUATION</div>
+                <div class="line-accent"></div>
+                <h2>AI Activity Is Everywhere. AI Clarity Is Rare.</h2>
+                <p>Pilots, tools, and pressure to "do something with AI" — but no shared answer to where AI changes the economics, what to fund, what to ignore, and what must be true before you scale. So spend scatters, governance lags, and value stays theoretical.</p>
+                <p>The constraint is rarely the technology. It is strategy, sequencing, and the operating model.</p>
+            </div>
+        </section>
+
+        <!-- ========== PULL QUOTE ========== -->
+        <div class="pull-quote fade-in">
+            "A senior-led sprint that turns scattered AI experiments into a prioritized roadmap, a business case, and a first 90-day plan you can act on."
+        </div>
+
+        <!-- ========== WHO IT'S FOR ========== -->
+        <section class="pillar-section">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">WHO IT'S FOR</div>
+                <div class="line-accent"></div>
+                <h2>Leadership Teams at the Point of Decision</h2>
+            </div>
+            <div class="container">
+                <div class="pillar-areas fade-in">
+                    <div class="pillar-area">
+                        <h3>Exploring AI</h3>
+                        <p>Leadership teams that see the opportunity but are unsure where AI actually changes the business — and where it doesn't.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Scattered Pilots</h3>
+                        <p>Operators with AI experiments running across the organization but no roadmap — unsure which to scale, which to stop, and how to sequence what comes next.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Evaluating Vendors</h3>
+                        <p>Teams assessing AI agents, automation platforms, or vendors who want an independent, vendor-neutral read before they commit.</p>
+                    </div>
+                    <div class="pillar-area">
+                        <h3>Proving ROI</h3>
+                        <p>PE-backed and mid-market leadership teams who need practical ROI, governance, and execution clarity — not a study.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== THE METHOD ========== -->
+        <section class="pillar-section alt">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">THE METHOD</div>
+                <div class="line-accent"></div>
+                <h2>The Mora Sol AI Value Path</h2>
+                <p>A simple, senior-led method. Every phase points at business value. The path ends in action.</p>
+                <div class="method-steps">
+                    <div class="method-step">
+                        <span class="method-step-num">01</span>
+                        <div>
+                            <h3>Frame</h3>
+                            <p>Where AI changes your economics — revenue, margin, capacity, experience.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <span class="method-step-num">02</span>
+                        <div>
+                            <h3>Assess</h3>
+                            <p>Readiness across data, process, systems, people, and governance.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <span class="method-step-num">03</span>
+                        <div>
+                            <h3>Prioritize</h3>
+                            <p>A scored portfolio of use cases by value, feasibility, and risk.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <span class="method-step-num">04</span>
+                        <div>
+                            <h3>Architect</h3>
+                            <p>Operating model, governance, and build / buy / integrate decisions.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <span class="method-step-num">05</span>
+                        <div>
+                            <h3>Activate</h3>
+                            <p>Roadmap, recommended first pilot, and how you will measure value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== DELIVERABLES ========== -->
+        <section class="pillar-section">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">WHAT YOU GET</div>
+                <div class="line-accent"></div>
+                <h2>A Board-Ready Decision Package</h2>
+                <p>In two to three weeks, you leave with decisions — not a deck on a shelf.</p>
+                <div class="deliverables-grid">
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Executive strategy memo</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>AI Readiness Scorecard</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Ranked AI opportunity roadmap</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Use-case prioritization matrix</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Business case for the first use cases</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Risk &amp; governance view</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>Recommended first pilot</p></div>
+                    <div class="deliverable-item"><span class="deliverable-dash">&mdash;</span><p>First 90-day implementation plan</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ENGAGEMENT FORMATS ========== -->
+        <section class="pillar-section alt">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">ENGAGEMENT</div>
+                <div class="line-accent"></div>
+                <h2>A Clear Way to Begin — and to Continue</h2>
+            </div>
+            <div class="container">
+                <div class="engagement-grid fade-in">
+                    <div class="engagement-card">
+                        <div class="eng-label">Entry</div>
+                        <h3>AI Readiness Diagnostic</h3>
+                        <p class="eng-desc">Fast clarity, low commitment</p>
+                        <ul>
+                            <li>Readiness scorecard &amp; gap view</li>
+                            <li>Top AI opportunities, ranked</li>
+                            <li>Clear go / fix decisions</li>
+                            <li>~1 week</li>
+                        </ul>
+                    </div>
+                    <div class="engagement-card">
+                        <div class="eng-label">Core</div>
+                        <h3>AI Value Path Sprint</h3>
+                        <p class="eng-desc">The flagship engagement</p>
+                        <ul>
+                            <li>Everything in the Diagnostic</li>
+                            <li>Prioritized portfolio &amp; business cases</li>
+                            <li>Governance &amp; operating model</li>
+                            <li>Recommended pilot &amp; 90-day plan</li>
+                            <li>2&ndash;3 weeks</li>
+                        </ul>
+                    </div>
+                    <div class="engagement-card">
+                        <div class="eng-label">Ongoing</div>
+                        <h3>Fractional AI Partnership</h3>
+                        <p class="eng-desc">Senior ownership, monthly</p>
+                        <ul>
+                            <li>Senior AI ownership, no full-time hire</li>
+                            <li>Governance &amp; roadmap stewardship</li>
+                            <li>Pilot &amp; vendor oversight</li>
+                            <li>Quarterly board updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WHY MORA SOL ========== -->
+        <section class="pillar-section">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">WHY MORA SOL</div>
+                <div class="line-accent"></div>
+                <h2>Top-Tier Judgment. Independent Focus.</h2>
+                <div class="diff-grid">
+                    <div class="diff-item">
+                        <h3>Senior-Led</h3>
+                        <p>You work with the advisor. No pyramid, no bench, no hand-offs.</p>
+                    </div>
+                    <div class="diff-item">
+                        <h3>Vendor-Neutral</h3>
+                        <p>No software margin. Advice follows your economics, not a partner ecosystem.</p>
+                    </div>
+                    <div class="diff-item">
+                        <h3>Execution-Aware</h3>
+                        <p>Strategy built on two decades of enterprise transformation — designed to survive implementation.</p>
+                    </div>
+                    <div class="diff-item">
+                        <h3>Right-Sized</h3>
+                        <p>The strategic value of a major firm engagement, with the speed and economics of an independent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ ========== -->
+        <section class="pillar-section alt">
+            <div class="pillar-section-inner fade-in">
+                <div class="eyebrow">QUESTIONS</div>
+                <div class="line-accent"></div>
+                <h2>What Leaders Usually Ask</h2>
+                <div class="faq-list">
+                    <details open>
+                        <summary>Do you implement, or just advise?</summary>
+                        <p>We sit above implementation and make it land. We scope, select, and govern implementers and oversee delivery — but we don't sell build hours or software. In the strategy phase we are vendor-neutral; if AI agents are the right answer, we can help design, select, or implement them.</p>
+                    </details>
+                    <details>
+                        <summary>How is this different from a chatbot rollout?</summary>
+                        <p>Individual tools help people do tasks faster. We change how work flows, how decisions get made, and where value is created — the operating-model questions that determine whether AI actually pays off.</p>
+                    </details>
+                    <details>
+                        <summary>How fast is value?</summary>
+                        <p>The sprint produces a funded plan and a build-ready first pilot in two to three weeks. The entry diagnostic gives you a readiness read and ranked opportunities in about a week.</p>
+                    </details>
+                    <details>
+                        <summary>Is this safe for a regulated environment?</summary>
+                        <p>Yes — governance and compliance are built in from the start. We focus on administrative and operational leverage with clear decision boundaries, and structure everything around your regulatory requirements.</p>
+                    </details>
+                    <details>
+                        <summary>How do you structure engagements?</summary>
+                        <p>Every engagement is scoped to the specific challenge — we price the outcome, not hours. Most relationships begin with a short, fixed-scope diagnostic that turns ambiguity into a plan you own. We will be direct about scope and investment once we understand the work.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA ========== -->
+        <section class="cta-section fade-in">
+            <h2>Find Where AI Changes Your Economics</h2>
+            <p>Most relationships begin with a focused conversation about your highest-value opportunity. We will be honest about whether we are the right fit.</p>
+            <a href="connect.html?from=advisory-ai" class="cta-btn">Start a Conversation</a>
+        </section>
+
+        <!-- ========== BACK ========== -->
+        <div class="back-section fade-in">
+            <a href="advisory.html" class="back-link"><span>&larr;</span> Back to Advisory</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-wordmark">
+            <span class="footer-mark">S</span>
+            <span class="footer-divider"></span>
+            <span class="footer-text">
+                <span class="footer-name">SOLANKI</span>
+                <span class="footer-co">CO</span>
+            </span>
+        </div>
+        <div class="footer-rule"></div>
+        <div class="footer-socials">
+            <a href="https://instagram.com/solanki.co" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.957c.453.453.757.91.957 1.47.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.957 1.47 4.08 4.08 0 01-1.47.957c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.957 4.08 4.08 0 01-.957-1.47c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.957-1.47A4.08 4.08 0 015.063 2.3c.46-.163 1.26-.35 2.43-.403C8.759 1.84 9.139 1.827 12 1.827zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126A5.876 5.876 0 004.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://x.com/solanki" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Solanki Co</p>
+        <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+            mobileNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
